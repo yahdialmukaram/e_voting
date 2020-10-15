@@ -8,8 +8,15 @@ public function __construct()
 {
     parent::__construct();
     $this->load->library('upload');
-    $this->load->library('session');
     date_default_timezone_set('Asia/Jakarta');
+    
+    //ini pnting untuk ke amanan login
+        if ($this->session->userdata('level') !== 'admin' or 
+            $this->session->userdata('logged_in') !== true
+            ) {
+        $this->session->set_flashdata('error', 'Anda tidak punya akses untuk menu admin');
+        redirect('c_login');
+        }
     
 }
 
@@ -97,6 +104,19 @@ public function __construct()
             
        }
     }
+
+    public function data_pemilih()
+    {
+        $judul ['title'] = 'halaman DPT';
+        $data ['pemilih'] = $this->model->get_pemilih();
+        $this->load->view('admin/header', $judul);
+        $this->load->view('admin/data_pemilih', $data);
+        $this->load->view('admin/footer');    
+    }
+
+    
+
+
 }
 
 

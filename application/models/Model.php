@@ -10,6 +10,12 @@ class Model extends CI_Model
         $this->db->order_by('id_user', 'desc');
         return $this->db->get()->result_array();
     }
+    public function get_pemilih()
+    {
+        $this->db->from('table_masyarakat');
+        $this->db->order_by('id_masyarakat', 'desc');
+        return $this->db->get()->result_array();
+    }
     public function get_paslon()
     {
         $this->db->from('table_paslon');
@@ -22,6 +28,7 @@ class Model extends CI_Model
         $this->db->insert('table_paslon', $insert);
         
     }
+    
     
 
 }

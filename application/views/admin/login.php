@@ -31,16 +31,22 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form>
+            <form action="<?= base_url();?>c_login/aksi_login" method='post'>
               <h1>Login </h1>
+            <?php if ($this->session->flashdata('error')) :?>
+						<div class="alert alert-danger" role="alert">
+							<strong><?= $this->session->flashdata('error'); ?>
+							</strong>
+						</div>
+						<?php endif; ?>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                <input type="text" name="username" class="form-control" placeholder="Username" required="" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input type="password" name="password" class="form-control" placeholder="Password" required="" />
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Log in</a>
+                <button type="submit" class="btn btn-default submit btn-sm">Login</button>
                 <a class="reset_pass" href="#">Lost your password?</a>
               </div>
 

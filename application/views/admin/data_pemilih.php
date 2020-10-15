@@ -2,7 +2,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Users <small>Some examples to get you started</small></h3>
+                <h3>Data DPT</h3>
               </div>
 
               <div class="title_right">
@@ -23,7 +23,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Data User</h2>
+                    <h2>Data DPT</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -41,35 +41,47 @@
                     </ul>
                     <div class="clearfix"></div>
                   </div>
-                  <button type="button" class="btn btn-primary fa fa-plus " data-toggle="modal"
+                  <!-- <button type="button" class="btn btn-primary fa fa-plus " data-toggle="modal"
                     data-target="#exampleModal">
-                    Tambah Admin Sistem
-                  </button>
+                    Tambah User
+                  </button> -->
                   <div class="x_content">
                 
                     <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                         <tr>
                           <th style="width: 1%;">No</th>
-                          <th>Username</th>
-                          <th>Password</th>
-                          <th>Nama</th>
-                          <th>Email</th>
-                          <th>Level</th>
+                          <th>nik</th>
+                          <th>nama</th>
+                          <th>alamat</th>
+                          <th>tanggal_lahir</th>
+                          <th>status</th>
+                          <th>jenis kelamin</th>
+                          <th>agama</th>
+                          <th>foto ktp (klik tombol)</th>
+                          <th>opsi</th>
                           </th>
                          
                         </tr>
                       </thead>
                       <tbody>
                         <?php $no = 1; 
-                        foreach ($user as $key => $value):?>
+                        foreach ($pemilih as $key => $value):?>
                         <tr>
                           <td><?=$no++?></td>
-                          <td><?=$value['username'];?></td>
-                          <td><?=$value['password'];?></td>
+                          <td><?=$value['nik'];?></td>
                           <td><?=$value['nama'];?></td>
-                          <td><?=$value['email'];?></td>
-                          <td><?=$value['level'];?></td>
+                          <td><?=$value['alamat'];?></td>
+                          <td><?=$value['tanggal_lahir'];?></td>
+                          <td><label for="" class="badge badge-success"><?= $value['status'];?></label></td>
+                          <td><?=$value['jenis_kelamin'];?></td>
+                          <td><?=$value['agama'];?></td>
+                          <td><?=$value['foto_ktp'];?></td>
+
+                      <td>
+                      <a href="<?php echo base_url(); ?>c_admin/edit_siswa/"
+                          class="btn btn-danger btn-xs"> <i class="fa fa-edit"></i> Aktifkan </a>
+                      </td>
                           </tr>
                         <?php endforeach; ?>
                      

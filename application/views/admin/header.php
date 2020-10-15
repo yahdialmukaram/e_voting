@@ -69,7 +69,7 @@
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>Admin</h2>
+                <h2><?= $this->session->userdata('nama');?></h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -85,7 +85,7 @@
                   <li><a href="<?=base_url();?>controller/"><i class="fa fa-dashboard"></i> Home <span class="fa fa-chevron"></span></a>
                   <li><a href="<?=base_url();?>controller/data_user/"><i class="fa fa-user"></i> Data User </a>
                   <li><a href="<?=base_url();?>controller/data_paslon/"><i class="fa fa-user"></i> Input Data Paslon</a>
-                  <li><a href="<?=base_url();?>/"><i class="fa fa-edit"></i> Data DPT</a>
+                  <li><a href="<?=base_url();?>controller/data_pemilih/"><i class="fa fa-edit"></i> Data DPT</a>
                   <li><a href="<?=base_url();?>/"><i class="fa fa-user"></i> Data Pengguna <span class="fa fa-chevron"></span></a>
              
                   </li>
@@ -144,7 +144,7 @@
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
                    
-                    <li><a href="<?= base_url();?>login/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><a href="<?= base_url();?>c_login/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>
 
