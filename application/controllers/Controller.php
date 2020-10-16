@@ -46,6 +46,23 @@ public function __construct()
         $this->load->view('admin/footer');
         
     }
+    public function add_admin()
+    {
+        $data = [
+            'username'=> $this->input->post('username'),
+            'password'=> md5($this->input->post('password')),
+            'nama'=> $this->input->post('nama'),
+            'email'=> $this->input->post('email'),
+            'level'=> $this->input->post('level'),  
+        ];
+        $this->model->add_admin($data);
+        $this->session->set_flashdata('success', 'admin sistem berhasil di tambah');
+        
+        redirect('controller/data_user');
+        
+        
+
+    }
     // tambah kan fungsi upload  untuk semua
     public function upload($name)
     {

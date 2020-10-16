@@ -76,14 +76,14 @@
                         foreach ($paslon as $key => $value):?>
                         <tr>
                           <td><?=$no++ ?></td>
-                          <td style="text-align: center;"><?=$value['nama_paslon'];?><hr><img style="width: 300px;height: 300px; border-radius: 300px; "
+                          
+                          <td style="text-align: center;"><?=$value['nama_paslon'];?><hr><img style="width: 300px;height: 300px;  "
                           src="<?=base_url();?>uploads/original_image/<?=$value['image_paslon'];?>">
-                        </td>        
-                    
-                          <td style="text-align: center;"><?=$value['nama_wakil'];?><hr><img style="width: 300px;height: 300px; border-radius: 300px; "
+                        </td>                       
+                          <td style="text-align: center;"><?=$value['nama_wakil'];?><hr><img style="width: 300px;height: 300px;  "
                           src="<?=base_url();?>uploads/original_image/<?=$value['image_wakil'];?>">
                         </td>                       
-                  
+                          
                           <td>
 										<a href="<?php echo base_url(); ?>"class="btn btn-info btn-xs"> <i class="fa fa-wrench"></i>Edit </a>
 <br>

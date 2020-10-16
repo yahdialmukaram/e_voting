@@ -18,6 +18,19 @@
             </div>
 
             <div class="clearfix"></div>
+               
+              	<!-- alert simpan data -->
+					<?php if ($this->session->flashdata('success')):?>
+					<div id="pesan" class="alert alert-success" role="alert">
+						<strong><?=$this->session->flashdata('success');?></strong>
+					</div>
+					<?php endif;?>
+					<!-- aler hapus data -->
+					<?php if ($this->session->flashdata('error')):?>
+					<div id="pesan" class="alert alert-danger" role="alert">
+						<strong><?=$this->session->flashdata('error');?></strong>
+					</div>
+					<?php endif; ?>
 
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
@@ -53,6 +66,7 @@
                           <th style="width: 1%;">No</th>
                           <th>Username</th>
                           <th>Password</th>
+                          <th>Edit Password</th>
                           <th>Nama</th>
                           <th>Email</th>
                           <th>Level</th>
@@ -67,6 +81,10 @@
                           <td><?=$no++?></td>
                           <td><?=$value['username'];?></td>
                           <td><?=$value['password'];?></td>
+                          <td style="text-align: center;">
+                          <a href="<?php echo base_url(); ?>c_admin/edit_siswa/"
+                              class="btn btn-success btn-xs"> <i class="fa fa-edit"></i> Edit</a>
+                          </td>
                           <td><?=$value['nama'];?></td>
                           <td><?=$value['email'];?></td>
                           <td><?=$value['level'];?></td>
@@ -89,15 +107,49 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Tambah Paslon</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Tambah Admin</h5>
 			</div>
 			<div class="modal-body">
 
-				<form action="<?=base_url();?>masyarakat/save_usulan" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-						<label for="exampleInputEmail1">Silahkan Masukan Usulan Pembangunan Anda</label>
-            <textarea name="usulan" id="usulan" class="form-control" cols=40" rows="12"></textarea>
-					</div>
+				<form action="<?=base_url();?>controller/add_admin" method="POST" enctype="multipart/form-data">
+
+          <div class="form-group">
+            <label class="control-label col-md-12 col-sm-3 col-xs-12">Username</label>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <input type="text" name="username" class="form-control"required placeholder="masukan username" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-12 col-sm-3 col-xs-12">Password</label>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <input type="password" name="password" class="form-control"required placeholder="masukan password" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-12 col-sm-3 col-xs-12">Nama</label>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <input type="text" name="nama" class="form-control"required placeholder="masukan nama" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-12 col-sm-3 col-xs-12">Email</label>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <input type="email" name="email" class="form-control"required placeholder="masukan email" aria-describedby="helpId" >
+              <small id="helpId" class="text-muted-red" >Email</small>
+            </div>
+          </div>
+          
+
+          <div class="form-group">
+            <label class="control-label col-md-12 col-sm-3 col-xs-12">Level
+            </label>
+            <div class="col-md-3 col-sm-9 col-xs-12">
+              <select name="level" id="" class="form-control">
+                <option>admin</option>
+              </select>
+            </div>
+          </div>
+
           </div>
           
 			<div class="modal-footer">
