@@ -31,7 +31,19 @@ class Model extends CI_Model
     public function save_paslon($insert)
     {
         $this->db->insert('table_paslon', $insert);
-        
+    }
+    public function delete_paslon($id)
+    {
+        $this->db->where('id_paslon', $id);
+        $this->db->delete('table_paslon');
+           
+    }
+    
+    public function delete_admin($id)
+    {
+        $this->db->where('id_user', $id);
+        $this->db->delete('table_user');
+           
     }
     
     

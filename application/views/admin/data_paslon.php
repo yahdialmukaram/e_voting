@@ -2,19 +2,9 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Users <small>Some examples to get you started</small></h3>
+                <h3>Kandidat</h3>
               </div>
 
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                  </div>
-                </div>
-              </div>
             </div>
 
             <div class="clearfix"></div>
@@ -42,18 +32,18 @@
                     <div class="clearfix"></div>
                   </div>
               
-              	<!-- alert simpan data -->
-					<?php if ($this->session->flashdata('success')):?>
-					<div id="pesan" class="alert alert-success" role="alert">
-						<strong><?=$this->session->flashdata('success');?></strong>
-					</div>
-					<?php endif;?>
-					<!-- aler hapus data -->
-					<?php if ($this->session->flashdata('error')):?>
-					<div id="pesan" class="alert alert-danger" role="alert">
-						<strong><?=$this->session->flashdata('error');?></strong>
-					</div>
-					<?php endif; ?>
+                        <!-- alert simpan data -->
+                  <?php if ($this->session->flashdata('success')):?>
+                  <div id="pesan" class="alert alert-success" role="alert">
+                    <strong><?=$this->session->flashdata('success');?></strong>
+                  </div>
+                  <?php endif;?>
+                  <!-- aler hapus data -->
+                  <?php if ($this->session->flashdata('error')):?>
+                  <div id="pesan" class="alert alert-danger" role="alert">
+                    <strong><?=$this->session->flashdata('error');?></strong>
+                  </div>
+                  <?php endif; ?>
 
                   <button type="button" class="btn btn-primary fa fa-plus" data-toggle="modal" data-target="#modelId">
                   Tambah Paslon
@@ -85,11 +75,11 @@
                         </td>                       
                           
                           <td>
-										<a href="<?php echo base_url(); ?>"class="btn btn-info btn-xs"> <i class="fa fa-wrench"></i>Edit </a>
+										<a href="<?php echo base_url(); ?>"class="btn btn-info btn-xs"> <i class="fa fa-wrench"></i> Edit </a>
 <br>
 										<a href="<?php echo base_url(); ?>"class="btn btn-warning btn-xs"> <i class="fa fa-search-plus"></i> Details</a>
 <br>				
-										<a href="<?php echo base_url(); ?>"class="btn btn-danger btn-xs"> <i class="fa fa-trash">Delete</i> </a>
+										<a href="#" onclick="hapus_data(<?=$value['id_paslon']?>);" class="btn btn-danger btn-xs"> <i class="fa fa-trash"> Delete</i> </a>
                       <hr>
 									</td>
               
@@ -138,15 +128,6 @@
 						<input type="file" name="image_wakil" id="" required class="form-control">						
           </div>
           
-          <div class="form-group">
-            <label for="exampleInputEmail1">Tanggal Lahir</label>
-            <div class='input-group date' id='myDatepicker2'>
-                <input type='text' name='tanggal_lahir' class="form-control" />
-                <span class="input-group-addon">
-                   <span class="glyphicon glyphicon-calendar"></span>
-                </span>
-            </div>
-        </div>
 
           <div class="form-group">
 						<label for="exampleInputEmail1">Visi Misi</label>
@@ -165,3 +146,30 @@
   </div>
   
          </div>
+
+
+ <!-- modal konfirmasi hapus data -->
+<div class="modal fade" id="konfirmasi" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+	<div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+			<form action="<?=base_url();?>controller/delete_paslon" method="post">
+			<div class="modal-header">
+				<h5 class="modal-title">Konfirmasi Hapus</h5>
+					
+			</div>
+			<div class="modal-body">Yakin Akan Hapus Data User ?
+				<input type="hidden" name="id" id="id">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+				<button type="submit" class="btn btn-primary">Ya</button>
+			</div></form>
+		</div>
+	</div>
+</div>
+<script>
+function hapus_data(id){
+  $("#id").val(id);
+  $("#kofirmasi").modal("show");
+}
+</script>

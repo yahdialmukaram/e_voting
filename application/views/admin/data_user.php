@@ -70,6 +70,7 @@
                           <th>Nama</th>
                           <th>Email</th>
                           <th>Level</th>
+                          <th>Opsi</th>
                           </th>
                          
                         </tr>
@@ -88,6 +89,7 @@
                           <td><?=$value['nama'];?></td>
                           <td><?=$value['email'];?></td>
                           <td><?=$value['level'];?></td>
+                          <td><a href="#" onclick="hapus_admin(<?=$value['id_user']?>);" class="btn btn-danger btn-xs"> <i class="fa fa-trash"> Delete</i> </a></td>
                           </tr>
                         <?php endforeach; ?>
                      
@@ -160,3 +162,29 @@
 		</div>
   </div>
          </div>
+
+          <!-- modal konfirmasi hapus data -->
+<div class="modal fade" id="konfirmasi" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+	<div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+			<form action="<?=base_url();?>controller/delete_admin" method="post">
+			<div class="modal-header">
+				<h5 class="modal-title">Konfirmasi Hapus</h5>
+					
+			</div>
+			<div class="modal-body">Yakin Akan Hapus Data User ?
+				<input type="hidden" name="id" id="id">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+				<button type="submit" class="btn btn-primary">Ya</button>
+			</div></form>
+		</div>
+	</div>
+</div>
+<script>
+function hapus_admin(id){
+  $("#id").val(id);
+  $("#kofirmasi").modal("show");
+}
+</script>

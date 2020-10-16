@@ -98,7 +98,6 @@ public function __construct()
                     'image_paslon' => $image['data'],
                     'nama_wakil' =>$this->input->post('nama_wakil'),
                     'image_wakil' => $image1['data'],
-                    'tanggal_lahir' =>$this->input->post('tanggal_lahir'),     
                     'visi' =>$this->input->post('visi'),     
                 ];      
                 $this->model->save_paslon($insert);
@@ -108,8 +107,23 @@ public function __construct()
             }else {
                 $this->session->set_flashdata('error',' Foto yang dimasukan tidak sesuai dengan kreteria sisten !');
                 redirect('controller/data_paslon');   
-            
        }
+    }
+    public function delete_paslon()
+    {
+        $id = $this->input->post('id');
+        $this->model->delete_paslon($id);
+        $this->session->set_flashdata('error', 'data paslon telah di hapus');
+        
+        redirect('controller/data_paslon');
+    }
+    public function delete_admin()
+    {
+        $id = $this->input->post('id');
+        $this->model->delete_admin($id);
+        $this->session->set_flashdata('error', 'data admin telah di hapus');
+        
+        redirect('controller/data_user');
     }
 
     public function data_pemilih()
