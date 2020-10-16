@@ -11,12 +11,12 @@ public function __construct()
     date_default_timezone_set('Asia/Jakarta');
     
     //ini pnting untuk ke amanan login
-        if ($this->session->userdata('level') !== 'admin' or 
-            $this->session->userdata('logged_in') !== true
-            ) {
-        $this->session->set_flashdata('error', 'Anda tidak punya akses untuk menu admin');
-        redirect('c_login');
-        }
+        // if ($this->session->userdata('level') !== 'admin' or 
+        //     $this->session->userdata('logged_in') !== true
+        //     ) {
+        // $this->session->set_flashdata('error', 'Anda tidak punya akses untuk menu admin');
+        // redirect('c_login');
+        // }
     
 }
 
@@ -74,17 +74,7 @@ public function __construct()
         if (!empty($_FILES[$name]['name'])) {
             if ($this->upload->do_upload($name)) {
                 $gbr = $this->upload->data();
-                // Compress Image
-                $config['image_library'] = 'gd2';
-                $config['source_image'] = './uploads/original_image/' . $gbr['file_name'];
-                $config['create_thumb'] = false;
-                $config['maintain_ratio'] = false;
-                $config['quality'] = '60%';
-                $config['width'] = 710;
-                $config['height'] = 420;
-                $config['new_image'] = './uploads/original_image/' . $gbr['file_name'];
-                $this->load->library('image_lib', $config);
-                $this->image_lib->resize();
+               
                 $response['data'] = $gbr['file_name'];
                 $response['status'] = 'success';
                 return $response;
