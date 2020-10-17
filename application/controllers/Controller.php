@@ -11,12 +11,12 @@ public function __construct()
     date_default_timezone_set('Asia/Jakarta');
     
     //ini pnting untuk ke amanan login
-        // if ($this->session->userdata('level') !== 'admin' or 
-        //     $this->session->userdata('logged_in') !== true
-        //     ) {
-        // $this->session->set_flashdata('error', 'Anda tidak punya akses untuk menu admin');
-        // redirect('c_login');
-        // }
+        if ($this->session->userdata('level') !== 'admin' or 
+            $this->session->userdata('logged_in') !== true
+            ) {
+        $this->session->set_flashdata('error', 'Anda tidak punya akses untuk menu admin');
+        redirect('c_login');
+        }
     
 }
 
@@ -133,6 +133,26 @@ public function __construct()
         $this->load->view('admin/header', $judul);
         $this->load->view('admin/data_pemilih', $data);
         $this->load->view('admin/footer');    
+    }
+    public function edit_password($id)
+    {
+        $judul ['title'] = 'halaman edit passord';
+        $data['edit'] = $this->model->edit_password($id);
+        $this->load->view('admin/header', $judul);
+        $this->load->view('admin/edit_password', $data);
+        $this->load->view('admin/footer');    
+    }
+    public function update_password($id)
+    {
+        $update = [
+            'password' =>md5($this->input->post('password')),  
+        ];
+        $this->model->update_password($id,$update);
+        $this->session->set_flashdata('success', 'password berhasil di ubah');
+
+        redirect('controller/data_user');
+        
+        
     }
 
     

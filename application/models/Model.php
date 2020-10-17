@@ -45,6 +45,19 @@ class Model extends CI_Model
         $this->db->delete('table_user');
            
     }
+    public function edit_password($id)
+    {
+        $this->db->where('id_user', $id);
+        return $this->db->get('table_user')->row_array();
+        
+    }
+    public function update_password($id,$update)
+    {
+        $this->db->where('id_user', $id);
+        $this->db->update('table_user',$update);
+        
+        
+    }
     
     
 

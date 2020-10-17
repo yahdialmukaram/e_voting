@@ -83,9 +83,10 @@
                           <td><?=$value['username'];?></td>
                           <td><?=$value['password'];?></td>
                           <td style="text-align: center;">
-                          <a href="<?php echo base_url(); ?>c_admin/edit_siswa/"
+                          <a href="<?php echo base_url(); ?>controller/edit_password/<?=$value['id_user']?>"
                               class="btn btn-success btn-xs"> <i class="fa fa-edit"></i> Edit</a>
                           </td>
+                          
                           <td><?=$value['nama'];?></td>
                           <td><?=$value['email'];?></td>
                           <td><?=$value['level'];?></td>
@@ -140,7 +141,6 @@
               <small id="helpId" class="text-muted-red" >Email</small>
             </div>
           </div>
-          
 
           <div class="form-group">
             <label class="control-label col-md-12 col-sm-3 col-xs-12">Level
@@ -151,7 +151,6 @@
               </select>
             </div>
           </div>
-
           </div>
           
 			<div class="modal-footer">
@@ -185,6 +184,6 @@
 <script>
 function hapus_admin(id){
   $("#id").val(id);
-  $("#kofirmasi").modal("show");
+  $("#konfirmasi").modal("show");
 }
 </script>

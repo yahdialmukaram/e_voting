@@ -94,8 +94,6 @@
           </div>
         </div>
 
-
-     
   <!-- Modal -->
   <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -157,7 +155,7 @@
 				<h5 class="modal-title">Konfirmasi Hapus</h5>
 					
 			</div>
-			<div class="modal-body">Yakin Akan Hapus Data User ?
+			<div class="modal-body">Yakin Akan Hapus Data Kandidat ?
 				<input type="hidden" name="id" id="id">
 			</div>
 			<div class="modal-footer">
@@ -170,6 +168,6 @@
 <script>
 function hapus_data(id){
   $("#id").val(id);
-  $("#kofirmasi").modal("show");
+  $("#konfirmasi").modal("show");
 }
 </script>
