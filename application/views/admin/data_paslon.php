@@ -75,7 +75,7 @@
                         </td>                       
                           
                           <td>
-										<a href="<?php echo base_url(); ?>"class="btn btn-info btn-xs"> <i class="fa fa-wrench"></i> Edit </a>
+										<a href="<?php echo base_url(); ?>controller/edit_paslon/<?=$value['id_paslon']?>" class="btn btn-info btn-xs"> <i class="fa fa-wrench"></i> Edit </a>
 <br>
 										<a href="<?php echo base_url(); ?>"class="btn btn-warning btn-xs"> <i class="fa fa-search-plus"></i> Details</a>
 <br>				

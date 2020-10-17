@@ -56,7 +56,17 @@ class Model extends CI_Model
         $this->db->where('id_user', $id);
         $this->db->update('table_user',$update);
         
+    }
+    public function edit_paslon($id)
+    {
+        $this->db->where('id_paslon', $id);
+        return $this->db->get('table_paslon')->row_array();
         
+    }
+    public function update_paslon($id,$data)
+    {
+        $this->db->where('id_paslon',$id);
+        $this->db->update('table_paslon',$data);
     }
     
     

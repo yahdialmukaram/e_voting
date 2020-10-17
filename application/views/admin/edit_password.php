@@ -13,7 +13,7 @@
               <div class="col-md-6 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h5>Edit Password Account </h5>
+                    <h5>Edit Password User </h5>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -30,7 +30,7 @@
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Ubah Password</label>
                         <div class="col-md-4 col-sm-12 col-xs-12">
-                          <input type="text" name="password"  class="form-control" placeholder="Ubah password" required>
+                          <input type="password" name="password"  class="form-control" placeholder="ubah password" required>
                         </div>
                       </div>
 

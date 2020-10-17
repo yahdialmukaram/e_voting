@@ -11,12 +11,12 @@ public function __construct()
     date_default_timezone_set('Asia/Jakarta');
     
     //ini pnting untuk ke amanan login
-        if ($this->session->userdata('level') !== 'admin' or 
-            $this->session->userdata('logged_in') !== true
-            ) {
-        $this->session->set_flashdata('error', 'Anda tidak punya akses untuk menu admin');
-        redirect('c_login');
-        }
+        // if ($this->session->userdata('level') !== 'admin' or 
+        //     $this->session->userdata('logged_in') !== true
+        //     ) {
+        // $this->session->set_flashdata('error', 'Anda tidak punya akses untuk menu admin');
+        // redirect('c_login');
+        // }
     
 }
 
@@ -151,9 +151,42 @@ public function __construct()
         $this->session->set_flashdata('success', 'password berhasil di ubah');
 
         redirect('controller/data_user');
-        
-        
     }
+    public function edit_paslon($id)
+    {
+        $judul ['title'] = 'halaman edit paslon';
+        $data['edit'] = $this->model->edit_paslon($id);
+        $this->load->view('admin/header', $judul);
+        $this->load->view('admin/edit_paslon', $data);
+        $this->load->view('admin/footer');    
+    }
+
+    public function update_paslon($id)
+    {
+        $image = $this->upload('image_paslon');
+        $image1 = $this->upload('image_wakil');
+        if ($image['status'] == 'success') {
+            $data =[
+                'nama_paslon'  =>$this->input->post('nama_paslon'),
+                'image_paslon' =>$image['data'],
+                'nama_wakil'   =>$this->input->post('nama_wakil'),
+                'image_wakil'  =>$image1['data'],
+                'visi'  =>$this->input->post('visi'),
+                ];
+            }else {
+                $data =[
+                    'nama_paslon'  =>$this->input->post('nama_paslon'),
+                    'nama_wakil' =>$this->input->post('nama_wakil'),
+                    'visi'  =>$this->input->post('visi'),
+                    ];
+           }
+           $this->model->update_paslon($id,$data);
+           // print_r($data);
+        
+        $this->session->set_flashdata('success','Data berhasil di ubah');
+        redirect('controller/data_paslon');
+    }
+  
 
     
 
