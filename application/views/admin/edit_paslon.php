@@ -53,7 +53,7 @@
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                           <a href="<?=base_url();?>controller/data_paslon"class=" btn btn-primary fa fa-reply" > Beck</a>
-                          <button type="submit" class="btn btn-success fa fa-glass">Update</button>
+                          <button type="submit" class="btn btn-success fa fa-glass"> Update</button>
                         </div>
                       </div>
 

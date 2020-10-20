@@ -54,7 +54,7 @@
 
               <div class="separator">
                 <p class="change_link">New to site?
-                  <a href="#signup" class="to_register"> Create Account </a>
+                  <a href="#signup" class="to_register"> Buat Account </a>
                 </p>
 
                 <div class="clearfix"></div>
@@ -70,19 +70,23 @@
 
         <div id="register" class="animate form registration_form">
           <section class="login_content">
-            <form>
-              <h1>Create Account</h1>
+            <form action="<?= base_url();?>c_login/registrasi_user" method="POST">
+              <h1>Buat Account</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                <input type="text" name="nama" class="form-control" placeholder="Nama" required="" />
               </div>
               <div>
-                <input type="email" class="form-control" placeholder="Email" required="" />
+                <input type="text" name="username" class="form-control" placeholder="Username" required="" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input type="email" name="email" class="form-control" placeholder="Email" required="" />
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Submit</a>
+                <input type="password" name="password" class="form-control" placeholder="Password" required="" />
+              </div>
+              <div>
+                <button type="submit" class="btn btn-default submit btn-sm">Register</button>
+                <!-- <a class="btn btn-default submit" href="index.html">Submit</a> -->
               </div>
 
               <div class="clearfix"></div>

@@ -9,6 +9,7 @@ class C_login extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Model_login');
+        $this->load->library('form_validation');
         
     }
     
@@ -59,5 +60,36 @@ class C_login extends CI_Controller
         redirect('c_login');
     }
 
-}
+    public function registrasi_user()
+    
+        {
+            $this->form_validation->set_rules('nama','Nama','required|trim');
+            $this->form_validation->set_rules('username','Username','required|trim');
+            $this->form_validation->set_rules('password1','Password','required|trim|min_length[3]|matches[password2]',[
+                'matches' => 'password tidak sama',
+                'min_length' =>'password terlalu pendek'
+            ]);
+            $this->form_validation->set_rules('password2','Password','required|trim|matches[password1]');
+            
+    
+            if ($this->form_validation->run()== false) {
+                $this->load->view('admin/login');
+            }else {
+                $data = [
+                    'nama' => $this->input->post('nama'),
+                    'username' => $this->input->post('username'),
+                    'password' => password_hash( $this->input->post('password1'),PASSWORD_DEFAULT),
+                    'level' => 2,
+                    // 'created_at' =>date('l,d-m-Y H:i:s')
+                ];
+                $this->Model_login->registrasi_user($data);
+                $this->session->set_flashdata('success','registrasi anda berhasil');
+                // print_r($data);
+                redirect('c_login');
+            } 
+          }
+
+    }
+
+
  ?>

@@ -15,6 +15,11 @@ class Model_login extends CI_Model
         $this->db->where('password', $password);
         return $this->db->get();
     }
+
+    public function registrasi_user($data)
+    {
+        $this->db->insert('table_user', $data);
+    }
 }
 
 /* End of file ModelName.php */
