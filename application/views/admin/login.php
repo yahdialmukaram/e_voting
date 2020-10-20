@@ -33,6 +33,13 @@
           <section class="login_content">
             <form action="<?= base_url();?>c_login/aksi_login" method='post'>
               <h1>Login </h1>
+                 <!-- alert simpan data -->
+					<?php if ($this->session->flashdata('success')):?>
+					<div id="pesan" class="alert alert-success" role="alert">
+						<strong><?=$this->session->flashdata('success');
+						?></strong>
+					</div>
+					<?php endif;?>
             <?php if ($this->session->flashdata('error')) :?>
 						<div class="alert alert-danger" role="alert">
 							<strong><?= $this->session->flashdata('error'); ?>
