@@ -21,14 +21,10 @@ class Model_login extends CI_Model
     //     $this->db->insert('table_user', $data);
     // }
 
-    public function registrasi_user($username,$password,$nama)
+    public function registrasi_user($data)
 	{
-		$data_user = array(
-			'username'=>$username,
-			'password'=>password_hash($password,PASSWORD_DEFAULT),
-			'nama'=>$nama
-		);
-		$this->db->insert('table_user',$data_user);
+		
+		$this->db->insert('table_user',$data);
 	}
 }
 

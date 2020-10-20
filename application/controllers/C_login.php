@@ -1,18 +1,18 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class C_login extends CI_Controller 
+class C_login extends CI_Controller
 {
-    
+
     public function __construct()
     {
         parent::__construct();
         $this->load->model('Model_login');
         $this->load->library('form_validation');
-        
+
     }
-    
+
     public function index()
     {
         $this->load->view('admin/login');
@@ -21,36 +21,36 @@ class C_login extends CI_Controller
     {
         //ambil username dan passwor dari databse
         // $username = $this->input->post('username');
-        // $password = $this->input->post('password'); 
-        $username=htmlspecialchars($this->input->post('username',TRUE),ENT_QUOTES);
-        $password=htmlspecialchars($this->input->post('password',TRUE),ENT_QUOTES);
-        
+        // $password = $this->input->post('password');
+        $username = htmlspecialchars($this->input->post('username', true), ENT_QUOTES);
+        $password = htmlspecialchars($this->input->post('password', true), ENT_QUOTES);
+
         //cek data ke databse ada atau tida data username
-        $cek_username = $this->Model_login->cek_login($username,hash('md5',$password));
+        $cek_username = $this->Model_login->cek_login($username, hash('md5', $password));
         //jika tidak ada kembali ke login dan beri aler
-        if ($cek_username->num_rows() == '0') {   //jika username di hitung sama dengan 0
+        if ($cek_username->num_rows() == '0') { //jika username di hitung sama dengan 0
             //beri aler dengan flashdata
-            $this->session->set_flashdata('error','maaf username dan password salah');
+            $this->session->set_flashdata('error', 'maaf username dan password salah');
             redirect('c_login');
 
             //jika ada buat sesi login
-        }else {
+        } else {
             $result = $cek_username->row_array(); //ambil satu data dari database
-                    //buat array untuk session
+            //buat array untuk session
             $ses_data = [
-                'id_user'  => $result['id_user'],
+                'id_user' => $result['id_user'],
                 'username' => $result['username'],
-                'nama'     => $result['nama'],
-                'email'    => $result['email'],
-                'level'    => $result['level'],
-                'logged_in'=>true,
-                ];
-    //set buat sessionnya 
-    $this->session->set_userdata($ses_data);
-    //arahkan sesuai level user
-    if ($this->session->userdata('level')=='admin') {
-        redirect('controller');
-        }
+                'nama' => $result['nama'],
+                'email' => $result['email'],
+                'level' => $result['level'],
+                'logged_in' => true,
+            ];
+            //set buat sessionnya
+            $this->session->set_userdata($ses_data);
+            //arahkan sesuai level user
+            if ($this->session->userdata('level') == 'admin') {
+                redirect('controller');
+            }
 
         }
     }
@@ -61,28 +61,27 @@ class C_login extends CI_Controller
     }
 
     public function registrasi_user()
-    
     {
-		$this->form_validation->set_rules('username', 'username','trim|required|min_length[1]|max_length[255]');
-		$this->form_validation->set_rules('password', 'password','trim|required|min_length[1]|max_length[255]');
-		$this->form_validation->set_rules('nama', 'nama','trim|required|min_length[1]|max_length[255]');
-		if ($this->form_validation->run()==true)
-	   	{
-			$username = $this->input->post('username');
-			$password = $this->input->post('password');
-			$nama = $this->input->post('nama');
-			$this->Model_login->registrasi_user($username,$password,$nama);
-			$this->session->set_flashdata('success','Proses Pendaftaran User Berhasil');
-			redirect('c_login');
-		}
-		else
-		{
-			$this->session->set_flashdata('error','tidak terdftar');
-			redirect('c_login');
-		}
-	}
+        $this->form_validation->set_rules('username', 'username', 'trim|required|min_length[1]|max_length[255]');
+        $this->form_validation->set_rules('password', 'password', 'trim|required|min_length[1]|max_length[255]');
+        $this->form_validation->set_rules('nama', 'nama', 'trim|required|min_length[1]|max_length[255]');
+        if ($this->form_validation->run() == true) {
+            $data = [
+                'username' => $this->input->post('username'),
+                'password' =>hash('md5', $this->input->post('password')),
+                'nama' => $this->input->post('nama'),
+                'email' => $this->input->post('email'),
+                'level' => 'admin',
+                'status' => '0',
+            ];
 
+            $this->Model_login->registrasi_user($data);
+            $this->session->set_flashdata('success', 'Proses Pendaftaran User Berhasil');
+            redirect('c_login');
+        } else {
+            $this->session->set_flashdata('error', 'tidak terdftar');
+            redirect('c_login');
+        }
     }
 
-
- ?>
+}
