@@ -62,32 +62,25 @@ class C_login extends CI_Controller
 
     public function registrasi_user()
     
-        {
-            $this->form_validation->set_rules('nama','Nama','required|trim');
-            $this->form_validation->set_rules('username','Username','required|trim');
-            $this->form_validation->set_rules('password1','Password','required|trim|min_length[3]|matches[password2]',[
-                'matches' => 'password tidak sama',
-                'min_length' =>'password terlalu pendek'
-            ]);
-            $this->form_validation->set_rules('password2','Password','required|trim|matches[password1]');
-            
-    
-            if ($this->form_validation->run()== false) {
-                $this->load->view('admin/login');
-            }else {
-                $data = [
-                    'nama' => $this->input->post('nama'),
-                    'username' => $this->input->post('username'),
-                    'password' => password_hash( $this->input->post('password1'),PASSWORD_DEFAULT),
-                    'level' => 2,
-                    // 'created_at' =>date('l,d-m-Y H:i:s')
-                ];
-                $this->Model_login->registrasi_user($data);
-                $this->session->set_flashdata('success','registrasi anda berhasil');
-                // print_r($data);
-                redirect('c_login');
-            } 
-          }
+    {
+		$this->form_validation->set_rules('username', 'username','trim|required|min_length[1]|max_length[255]|is_unique[tb_user.username]');
+		$this->form_validation->set_rules('password', 'password','trim|required|min_length[1]|max_length[255]');
+		$this->form_validation->set_rules('nama', 'nama','trim|required|min_length[1]|max_length[255]');
+		if ($this->form_validation->run()==true)
+	   	{
+			$username = $this->input->post('username');
+			$password = $this->input->post('password');
+			$nama = $this->input->post('nama');
+			$this->model_login->register_user($username,$password,$nama);
+			$this->session->set_flashdata('success','Proses Pendaftaran User Berhasil');
+			redirect('c_login');
+		}
+		else
+		{
+			$this->session->set_flashdata('error','tidak terdftar');
+			redirect('c_login');
+		}
+	}
 
     }
 
