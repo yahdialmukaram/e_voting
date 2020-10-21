@@ -77,7 +77,7 @@
 
         <div id="register" class="animate form registration_form">
           <section class="login_content">
-            <form action="<?= base_url();?>c_login/registrasi_user" method="POST">
+            <form action="<?= base_url();?>c_login/registrasi_user" method="POST" enctype="multipart/form-data">
               <h1>Buat Account</h1>
               <div>
                 <input type="text" name="nama" class="form-control" placeholder="Nama" required="" />

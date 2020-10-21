@@ -49,7 +49,12 @@ class C_login extends CI_Controller
             $this->session->set_userdata($ses_data);
             //arahkan sesuai level user
             if ($this->session->userdata('level') == 'admin') {
+                
                 redirect('controller');
+            }elseif ($this->session->userdata('level')=='masyarakat') {
+                
+                redirect('masyarakat');
+                
             }
 
         }
@@ -71,8 +76,8 @@ class C_login extends CI_Controller
                 'password' =>hash('md5', $this->input->post('password')),
                 'nama' => $this->input->post('nama'),
                 'email' => $this->input->post('email'),
-                'level' => 'admin',
-                'status' => '0',
+                'level' => 'masyarakat',
+                'status' => '2',
             ];
 
             $this->Model_login->registrasi_user($data);
