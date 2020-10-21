@@ -54,7 +54,8 @@
                           <th>nik</th>
                           <th>nama</th>
                           <th>alamat</th>
-                          <th>tanggal_lahir</th>
+                          <th>tanggal lahir</th>
+                          <th>status perkawinan</th>
                           <th>status</th>
                           <th>jenis kelamin</th>
                           <th>agama</th>
@@ -73,6 +74,7 @@
                           <td><?=$value['nama'];?></td>
                           <td><?=$value['alamat'];?></td>
                           <td><?=$value['tanggal_lahir'];?></td>
+                          <td><?=$value['status_perkawinan'];?></td>
                           <td><label for="" class="badge badge-success"><?= $value['status'];?></label></td>
                           <td><?=$value['jenis_kelamin'];?></td>
                           <td><?=$value['agama'];?></td>
