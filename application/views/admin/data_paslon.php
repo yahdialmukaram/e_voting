@@ -56,6 +56,7 @@
                           <th style="width: 1%;">No</th>
                           <th style="text-align: center;">Ketua Paslon</th>
                           <th style="text-align: center;">Wakil Paslon</th>
+                          <th style="width: 5%;">Jumlah Suara </th>
                           <th>Action</th>
                           <th></th>
                          
@@ -67,12 +68,14 @@
                         <tr>
                           <td><?=$no++ ?></td>
                           
-                          <td style="text-align: center;"><?=$value['nama_paslon'];?><hr><img style="width: 300px;height: 300px;  "
+                          <td style="text-align: center;"><?=$value['nama_paslon'];?><hr><img style="width: 250px;height: 250px;  "
                           src="<?=base_url();?>uploads/original_image/<?=$value['image_paslon'];?>">
                         </td>                       
-                          <td style="text-align: center;"><?=$value['nama_wakil'];?><hr><img style="width: 300px;height: 300px;  "
+                          <td style="text-align: center;"><?=$value['nama_wakil'];?><hr><img style="width: 250px;height: 250px;  "
                           src="<?=base_url();?>uploads/original_image/<?=$value['image_wakil'];?>">
-                        </td>                       
+                        </td>          
+                        <td><?= $value['jumlah_suara'];?> 
+                      </td>             
                           
                           <td>
 										<a href="<?php echo base_url(); ?>controller/edit_paslon/<?=$value['id_paslon']?>" class="btn btn-info btn-xs"> <i class="fa fa-wrench"></i> Edit </a>
@@ -137,7 +140,7 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary">Save</button>
-        </div>
+        </div>          
       </form>
       </div>
     </div>

@@ -2,7 +2,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Data DPT</h3>
+                <h3>Data DPT Belum Memilih</h3>
               </div>
 
               <div class="title_right">
@@ -54,11 +54,13 @@
                           <th>nik</th>
                           <th>nama</th>
                           <th>alamat</th>
+                          <th>tempat lahir</th>
                           <th>tanggal lahir</th>
+                          <th>jenis kelamin</th>
+                          <th>no hp</th>
+                          <th>agama</th>
                           <th>status perkawinan</th>
                           <th>status</th>
-                          <th>jenis kelamin</th>
-                          <th>agama</th>
                           <th>foto ktp (klik tombol)</th>
                           <th>opsi</th>
                           </th>
@@ -73,11 +75,13 @@
                           <td><?=$value['nik'];?></td>
                           <td><?=$value['nama'];?></td>
                           <td><?=$value['alamat'];?></td>
+                          <td><?=$value['tempat_lahir'];?></td>
                           <td><?=$value['tanggal_lahir'];?></td>
-                          <td><?=$value['status_perkawinan'];?></td>
-                          <td><label for="" class="badge badge-success"><?= $value['status'];?></label></td>
                           <td><?=$value['jenis_kelamin'];?></td>
+                          <td><?=$value['no_hp'];?></td>
                           <td><?=$value['agama'];?></td>
+                          <td><?=$value['status_perkawinan'];?></td>
+                          <td><label for="" class="btn btn-warning btn-xs"><?= $value['status'];?></label></td>
                           <td><?=$value['foto_ktp'];?></td>
 
                       <td>
