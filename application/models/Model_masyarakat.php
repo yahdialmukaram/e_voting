@@ -7,7 +7,13 @@ class Model_masyarakat extends CI_Model
     {
         $this->db->insert('table_masyarakat', $data);
         
-    }    
+	}    
+	// check data diri
+	public function check_data_diri(Type $var = null)
+	{
+		return $this->db->from('table_masyarakat')->where('id_user', $this->session->userdata('id_user'))->get()->num_rows();
+		
+	}
 
 }
 

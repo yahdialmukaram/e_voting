@@ -14,8 +14,15 @@ public function __construct()
 
     public function index()
     {
-     $judul['title']= 'Halaman Isi data diri';
-        $this->load->view('masyarakat/isi_data_diri', $judul);   
+	 $judul['title']= 'Halaman Isi data diri';
+	//  check data user
+	$check=$this->Model_masyarakat->check_data_diri();
+	if ($check>0) {
+		redirect('masyarakat/home');
+	} else {
+		$this->load->view('masyarakat/isi_data_diri', $judul);  
+	}
+       
        
 		// redirect('masyarakat');
 		// echo $this->session->userdata('id_user');
