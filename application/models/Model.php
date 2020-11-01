@@ -53,7 +53,7 @@ class Model extends CI_Model
     }
     public function delete_user($id)
     {
-        $this->db->where('id_masyarakat', $id);
+        $this->db->where('id_user', $id);
         $this->db->delete('table_masyarakat');
            
     }

@@ -17,7 +17,8 @@ public function __construct()
      $judul['title']= 'Halaman Isi data diri';
         $this->load->view('masyarakat/isi_data_diri', $judul);   
         
-        // redirect('masyarakat');
+		// redirect('masyarakat');
+		// echo $this->session->userdata('id_user');
 
     }
     public function home()
@@ -40,7 +41,8 @@ public function __construct()
             'tanggal_lahir'=> $this->input->post('tanggal_lahir'),
             'jenis_kelamin'=> $this->input->post('jenis_kelamin'),
             'no_hp'=> $this->input->post('no_hp'),
-            'agama'=> $this->input->post('agama'),
+			'agama'=> $this->input->post('agama'),
+			'id_user'=>$this->session->userdata('id_user'),
             // 'foto_ktp'=> $this->input->post('foto_ktp'),
             'status_perkawinan'=> $this->input->post('status_perkawinan'),
          ];
