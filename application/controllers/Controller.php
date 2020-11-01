@@ -121,7 +121,8 @@ public function __construct()
     {
         $id = $this->input->post('id');
         $this->model->delete_admin($id);
-        $this->session->set_flashdata('error', 'data admin telah di hapus');
+        $this->model->delete_user($id);
+        $this->session->set_flashdata('error', 'data user telah di hapus');
         
         redirect('controller/data_user');
     }
@@ -132,6 +133,14 @@ public function __construct()
         $data ['pemilih'] = $this->model->get_pemilih();
         $this->load->view('admin/header', $judul);
         $this->load->view('admin/data_pemilih', $data);
+        $this->load->view('admin/footer');    
+    }
+    public function data_selesai_memilih()
+    {
+        $judul ['title'] = 'halaman DPT';
+        $data ['pemilih'] = $this->model->get_selesai_memilih();
+        $this->load->view('admin/header', $judul);
+        $this->load->view('admin/data_selesai_memilih', $data);
         $this->load->view('admin/footer');    
     }
     public function edit_password($id)

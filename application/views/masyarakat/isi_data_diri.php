@@ -12,19 +12,19 @@
 	<title><?=$title?></title>
 
 	<!-- Bootstrap -->
-	<link href="http://localhost/smart_nagari/assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="<?=base_url();?>assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Font Awesome -->
-	<link href="http://localhost/smart_nagari/assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="<?=base_url();?>assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<!-- NProgress -->
-	<link href="http://localhost/smart_nagari/assets/vendors/nprogress/nprogress.css" rel="stylesheet">
+	<link href="<?=base_url();?>assets/vendors/nprogress/nprogress.css" rel="stylesheet">
 	<!-- Animate.css -->
-	<link href="http://localhost/smart_nagari/assets/vendors/animate.css/animate.min.css" rel="stylesheet">
+	<link href="<?=base_url();?>assets/vendors/animate.css/animate.min.css" rel="stylesheet">
 	<!-- boostrap-datetimepicker -->
 	<link rel="stylesheet"
-		href="http://localhost/smart_nagari/assets/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css">
+		href="<?=base_url();?>assets/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css">
 	<!-- Custom Theme Style -->
-	<link href="http://localhost/smart_nagari/assets/build/css/custom.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="http://localhost/smart_nagari/assets/css/css-costume.css">
+	<link href="<?=base_url();?>assets/build/css/custom.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="<?=base_url();?>assets/css/css-costume.css">
 </head>
 <style>
 	body {
@@ -50,11 +50,11 @@
 							<li class="">
 								<a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
 									aria-expanded="false">
-									<img src="http://localhost/smart_nagari/assets/images/admin.png" alt=""><?=$this->session->userdata('username');?>
+									<img src="<?=base_url();?>assets/images/admin.png" alt=""><?=$this->session->userdata('username');?>
 									<span class=" fa fa-angle-down"></span>
 								</a>
 								<ul class="dropdown-menu dropdown-usermenu pull-right">
-									<!-- <li><a href="http://localhost/smart_nagari/controller/ubah_password"> Ubah Password</a>
+									<!-- <li><a href="<?=base_url();?>controller/ubah_password"> Ubah Password</a>
 									</li> -->
 									<!-- <li>
                           <a href="javascript:;">
@@ -103,9 +103,9 @@
 										admin berhak untuk menonaktifkan account anda !! <br>
 										Jika anda klik simpan berarti anda setuju dengan semua ketentuan yang ada
 									</div>
-																		<form id="simpan_data_diri" enctype="multipart/form-data"
-										class="form-horizontal form-label-right" method="POST"
-										action="http://localhost/smart_nagari/masyarakat/simpan_data_diri">
+								
+			<form id="save_data_diri" enctype="multipart/form-data" class="form-horizontal form-label-right" method="POST"
+										action="<?=base_url();?>masyarakat/save_data_diri">
 										<div class="col-md-6">
 											<div class="form-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12">NIK</label>
@@ -145,7 +145,7 @@
 													Lahir</label>
 												<div class="col-md-9 col-sm-9 col-xs-12">
 													<div class="input-group date" id="myDatepicker2">
-														<input type="text" name="tgl_lahir" id="tgl_selesai"
+														<input type="text" name="tanggal_lahir" 
 															class="form-control">
 														<span class="input-group-addon">
 															<span class="glyphicon glyphicon-calendar"></span>
@@ -159,17 +159,11 @@
 												</label>
 												<div class="col-md-9 col-sm-9 col-xs-12">
 													<select name="jenis_kelamin" id="" class="form-control">
-														<option value="L">Laki Laki</option>
-														<option value="P">Perempuan</option>
+														<option>Laki Laki</option>
+														<option>Perempuan</option>
 													</select>
 												</div>
                                             </div>
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
                                             
 											<div class="ln_solid"></div>
 										</div>
@@ -178,7 +172,7 @@
                                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Nomor
                                                                 HP</label>
                                                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="nohp" value="" class="form-control"
+                                                                <input type="text" name="no_hp" value="" class="form-control"
                                                                     placeholder="Nomor hp">
                                                             </div>
                                                         </div>
@@ -210,27 +204,17 @@
 									
 								
 							
-											<div class="form-group">
+											<!-- <div class="form-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12">Foto KTP
 												</label>
 												<div class="col-md-9 col-sm-9 col-xs-12">
-													<input type="file" name="ktp" class="form-control"
+													<input type="file" name="foto_ktp" class="form-control"
 														placeholder="Nama" onchange="loadFile2(event)">
 												</div>
-											</div>
-											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
-												<div class="col-md-9 col-sm-9 col-xs-12">
-													<img id="output" class="foto-masyarakat"
-														src="http://localhost/smart_nagari/assets/images/no-image-found-360x260.png"
-														alt="">
-												
-												</div>
-											</div>
+											</div> -->
+									
 
 											<div class="ln_solid"></div>
-
-
 
 										</div>
 										<div class="ln_solid"></div>
@@ -275,7 +259,7 @@
 			<!-- footer content -->
 			<footer>
 				<div class="pull-right">
-					Smart Nagari Tabek <a href=""></a>
+					E-Voting <a href=""></a>
 				</div>
 				<div class="clearfix"></div>
 			</footer>
@@ -284,23 +268,23 @@
 	</div>
 
 	<!-- jQuery -->
-	<script src="http://localhost/smart_nagari/assets/vendors/jquery/dist/jquery.min.js"></script>
+	<script src="<?=base_url();?>assets/vendors/jquery/dist/jquery.min.js"></script>
 	<!-- Bootstrap -->
-	<script src="http://localhost/smart_nagari/assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="<?=base_url();?>assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 	<!-- FastClick -->
-	<script src="http://localhost/smart_nagari/assets/vendors/fastclick/lib/fastclick.js"></script>
+	<script src="<?=base_url();?>assets/vendors/fastclick/lib/fastclick.js"></script>
 	<!-- NProgress -->
-	<script src="http://localhost/smart_nagari/assets/vendors/nprogress/nprogress.js"></script>
+	<script src="<?=base_url();?>assets/vendors/nprogress/nprogress.js"></script>
 	<!-- iCheck -->
-	<script src="http://localhost/smart_nagari/assets/vendors/iCheck/icheck.min.js"></script>
+	<script src="<?=base_url();?>assets/vendors/iCheck/icheck.min.js"></script>
 	<!-- moment.js -->
-	<script src="http://localhost/smart_nagari/assets/vendors/moment/min/moment.min.js"></script>
+	<script src="<?=base_url();?>assets/vendors/moment/min/moment.min.js"></script>
 	<!-- bootstrap-datetimepicker -->
 	<script
-		src="http://localhost/smart_nagari/assets/vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js">
+		src="<?=base_url();?>assets/vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js">
 	</script>
 	<!-- Custom Theme Scripts -->
-	<script src="http://localhost/smart_nagari/assets/build/js/custom.min.js"></script>
+	<script src="<?=base_url();?>assets/build/js/custom.min.js"></script>
 	<script>
 		$('#tgl_selesai').datetimepicker({
 			format: 'DD-MM-YYYY'
@@ -326,7 +310,7 @@
 			$('#konfirmasi_daftar').modal('show');
 		});
 		$('.konfirmasi').click(function (e) {
-			$('#simpan_data_diri').submit();
+			$('#save_data_diri').submit();
 		});
 	
 	</script>

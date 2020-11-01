@@ -21,6 +21,12 @@ class Model extends CI_Model
         $this->db->order_by('id_masyarakat', 'desc');
         return $this->db->get()->result_array();
     }
+    public function get_selesai_memilih()
+    {
+        $this->db->from('table_masyarakat');
+        $this->db->order_by('id_masyarakat', 'desc');
+        return $this->db->get()->result_array();
+    }
     public function get_paslon()
     {
         $this->db->from('table_paslon');
@@ -43,6 +49,12 @@ class Model extends CI_Model
     {
         $this->db->where('id_user', $id);
         $this->db->delete('table_user');
+           
+    }
+    public function delete_user($id)
+    {
+        $this->db->where('id_masyarakat', $id);
+        $this->db->delete('table_masyarakat');
            
     }
     public function edit_password($id)
