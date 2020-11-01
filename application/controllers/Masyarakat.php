@@ -16,8 +16,8 @@ public function __construct()
     {
 	 $judul['title']= 'Halaman Isi data diri';
 	//  check data user
-	$check=$this->Model_masyarakat->check_data_diri();
-	if ($check>0) {
+	$check = $this->Model_masyarakat->check_data_diri();
+	if ($check > 0) {
 		redirect('masyarakat/home');
 	} else {
 		$this->load->view('masyarakat/isi_data_diri', $judul);  
@@ -40,18 +40,7 @@ public function __construct()
     }
     public function save_data_diri()
     {
-        $id_user = $this->input->post('id_user');
-        $sql =  $this->db->query("select id_user from table_masyarakat where id_user = '$id_user' ");
-        $check_id_user = $sql->num_rows();
-        if ($check_id_user > 0 ) {
-            $this->session->set_flashdata('error',' sudah ada');
-            redirect('masyarakat/home');
-        } else {
-            
-            redirect('masyarakat');
-            
-        }
-
+     
         $data = [
             'nik'=> $this->input->post('nik'),
             'nama'=> $this->input->post('nama'),
