@@ -33,6 +33,18 @@ public function __construct()
     }
     public function save_data_diri()
     {
+        $id_user = $this->input->post('id_user');
+        $sql =  $this->db->query("select id_user from table_masyarakat where id_user = '$id_user' ");
+        $check_id_user = $sql->num_rows();
+        if ($check_id_user > 0 ) {
+            $this->session->set_flashdata('error',' sudah ada');
+            redirect('masyarakat/home');
+        } else {
+            
+            redirect('masyarakat');
+            
+        }
+
         $data = [
             'nik'=> $this->input->post('nik'),
             'nama'=> $this->input->post('nama'),
@@ -51,17 +63,7 @@ public function __construct()
          redirect('masyarakat/home');
         
         
-         $id_user = $this->input->post('id_user');
-         $sql =  $this->db->query("select id_user from table_masyarakat where id_user = '$id_user' ");
-         $check_id_user = $sql->num_rows();
-         if ($check_id_user > 0 ) {
-             $this->session->set_flashdata('error',' sudah ada');
-             redirect('masyarakat/home');
-         } else {
-             
-             redirect('masyarakat');
-             
-         }
+      
     }
     
 
