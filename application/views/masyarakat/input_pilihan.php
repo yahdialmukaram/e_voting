@@ -64,16 +64,30 @@
                         <tr>
                           <td><?=$no++ ?></td>
                           
-                          <td style="text-align: center;"><?=$value['nama_paslon'];?><hr><img style="width: 250px;height: 250px;  "
+                          <td style="text-align: center;"><?=$value['nama_paslon'];?><hr><img style="width: 200px;height: 200px;  "
                           src="<?=base_url();?>uploads/original_image/<?=$value['image_paslon'];?>">
                          
                         </td>                       
-                          <td style="text-align: center;"><?=$value['nama_wakil'];?><hr><img style="width: 250px;height: 250px;  "
+                          <td style="text-align: center;"><?=$value['nama_wakil'];?><hr><img style="width: 200px;height: 200px;  "
                           src="<?=base_url();?>uploads/original_image/<?=$value['image_wakil'];?>">
                         </td>          
-                        <td><label for="" class="btn btn-warning  fa fa-history"> Verifikasi</label></td>
+                        <td>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <?php if ($value['status_pilihan'] =="" ):?>
+                        <label for="" class="btn btn-warning fa fa-history"> Draf</label></td>
+                        <?php elseif ($value['status_pilihan'] == "1"):?>
+                        <label for="" class="btn btn-warning  fa fa-history"> Verifikasi</label>
+                        <?php elseif ($value['status_pilihan']=="3"):?>
+                        <label for="" class="btn btn-success fa fa-refresh"> success</label>
+                        <?php elseif ($value['status_pilihan'] =="2"):?>
+                        <label for="" class="btn btn-danger fa fa-remove"> Di tolak</label>
+                        <?php endif;?>
+                        </td>
                                 <td>
-                          <br>
                           <br>
                           <br>
                           <br>
@@ -84,9 +98,6 @@
                          <br>
                          <a href="#" onclick="input_pilihan();"> <i class="btn btn-primary fa fa-check-circle"> Pilih</i> </a>
                                   </td>
-                          
-                        
-              
                           </tr>
                           <?php endforeach; ?>
                         </tbody>
