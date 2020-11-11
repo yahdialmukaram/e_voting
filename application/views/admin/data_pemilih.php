@@ -114,7 +114,7 @@
 				<form action="<?=base_url();?>masyarakat/save_usulan" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
 						<label for="exampleInputEmail1">Silahkan Masukan Usulan Pembangunan Anda</label>
-            <textarea name="usulan" id="usulan" class="form-control" cols=40" rows="12"></textarea>
+            <textarea name="usulan" id="usulan" class="form-control" cols="40" rows="12"></textarea>
 					</div>
           </div>
           

@@ -50,12 +50,12 @@
             </div>       
 
             <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Visi Misi
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">vis misi
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <textarea type="text" name="visi" rows="13" value="<?=$edit['visi']?>" id="first-name"  class="form-control col-md-7 col-xs-12"></textarea>
+                          <input type="text" name="visi" value="<?=$edit['visi']?>" id="first-name"  class="form-control col-md-7 col-xs-12">
                         </div>
-					  </div>
+					  </div>  
               
                       <div class="ln_solid"></div>
                       <div class="form-group">

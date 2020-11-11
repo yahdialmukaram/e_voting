@@ -53,7 +53,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Visi Misi
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <textarea type="text" name="visi" rows="13" value="<?=$edit['visi']?>" id="first-name"  class="form-control col-md-7 col-xs-12"></textarea>
+                        <textarea class="form-control"  cols="30" rows="9"> <?=$edit['visi']?></textarea>
                         </div>
 					  </div>
 
