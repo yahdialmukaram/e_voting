@@ -79,7 +79,16 @@ class Model extends CI_Model
     {
         $this->db->where('id_paslon',$id);
         $this->db->update('table_paslon',$data);
-    }
+	}
+	public function status_masyarakat($id)
+	{
+		$this->db->from('table_masyarakat');
+		$this->db->select('status');
+		$this->db->where('id_user', $id);
+		return $this->db->get()->row_array();
+		
+	}
+	
     
     
 

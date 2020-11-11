@@ -47,7 +47,8 @@ public function __construct()
 			'agama'=> $this->input->post('agama'),
 			'id_user'=>$this->session->userdata('id_user'),
             // 'foto_ktp'=> $this->input->post('foto_ktp'),
-            'status_perkawinan'=> $this->input->post('status_perkawinan'),
+			'status_perkawinan'=> $this->input->post('status_perkawinan'),
+			'status'=>false,
          ];
          $this->Model_masyarakat->save_data_diri($data);
          $this->session->set_flashdata('success', 'data di simpan');
@@ -66,10 +67,11 @@ public function __construct()
     public function input_pilihan()
     {
         $judul['title'] = 'Input pilihan';
-        $data ['paslon'] = $this->model->get_paslon();
+		$data ['paslon'] = $this->model->get_paslon();
+		$data['status']=$this->model->status_masyarakat($this->session->userdata('id_user'))['status'];
         $this->load->view('masyarakat/header', $judul);
         $this->load->view('masyarakat/input_pilihan', $data);
-        $this->load->view('masyarakat/footer');
+		$this->load->view('masyarakat/footer');
 	}
 	public function detail_paslon()
 	{

@@ -95,8 +95,12 @@
                           <br>
                          <a href="#" onclick="visi(<?=$value['id_paslon']?>);"> <i class="btn btn-danger fa fa-book"> Visi Misi</i> </a>
                          <br>
-                         <br>
-                         <a href="#" onclick="input_pilihan();"> <i class="btn btn-primary fa fa-check-circle"> Pilih</i> </a>
+												 <br>
+												 <?php if ($status==false):?>
+													<a href="#" onclick="verifikasi();"> <i class="btn btn-primary fa fa-check-circle"> Pilih</i> </a>
+													<?php else: ?>
+												 <a href="#" onclick="input_pilihan();"> <i class="btn btn-primary fa fa-check-circle"> Pilih</i> </a>
+													<?php endif;?>
                                   </td>
                           </tr>
                           <?php endforeach; ?>
@@ -151,7 +155,27 @@
 		</div>
 	</div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="verifikasi" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Peringatan</h5>
+			</div>
+			<div class="modal-body">
+				Maaf ada anda berlum terverfikasi, jadi anda tidak bisa memilih, mohon tunggu verifikasi !!!
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+			</div>
+		</div>
+	</div>
+</div>
 <script>
+	function verifikasi() { 
+		$("#verifikasi").modal("show");
+	 }
 function visi(id){
 	$.ajax({
 		type: "POST",
