@@ -54,6 +54,7 @@
                           <th style="width: 1%;">No</th>
                           <th style="text-align: center;">Ketua Paslon</th>
                           <th style="text-align: center;">Wakil Paslon</th>
+                          <th style="width: 10%;">Status</th>
                           <th style="width: 10%;">Aksi</th>
                         </tr>
                       </thead>
@@ -70,7 +71,7 @@
                           <td style="text-align: center;"><?=$value['nama_wakil'];?><hr><img style="width: 250px;height: 250px;  "
                           src="<?=base_url();?>uploads/original_image/<?=$value['image_wakil'];?>">
                         </td>          
-                        <!-- <td><?= $value['visi']?></td> -->
+                        <td><label for="" class="btn btn-warning  fa fa-history"> Verifikasi</label></td>
                                 <td>
                           <br>
                           <br>
@@ -105,7 +106,6 @@
 <div class="modal fade" id="visi" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
-			<form action="<?=base_url();?>controller/delete_paslon" method="post">
 			<div class="modal-header">
 				<h5 class="modal-title">Visi Misi Kandidat</h5>
 					
@@ -125,7 +125,7 @@
 <div class="modal fade" id="pilih" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
 	<div class="modal-dialog modal-sm" role="document">
 		<div class="modal-content">
-			<form action="<?=base_url();?>controller/delete_paslon" method="post">
+			<form action="<?=base_url();?>controller/" method="post">
 			<div class="modal-header">
 				<h5 class="modal-title">Konfirmasi Pilihan Anda</h5>
 					

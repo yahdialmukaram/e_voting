@@ -71,7 +71,7 @@ public function __construct()
         $this->load->view('masyarakat/input_pilihan', $data);
         $this->load->view('masyarakat/footer');
 	}
-	public function detail_paslon(Type $var = null)
+	public function detail_paslon()
 	{
 		$id=$this->input->post('id');
 		$data=$this->model->edit_paslon($id);

@@ -20,7 +20,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nama Palon
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="nama_paslon" value="<?=$edit['nama_paslon']?>" id="first-name"  class="form-control col-md-7 col-xs-12">
+                          <input type disabled="text" name="nama_paslon" value="<?=$edit['nama_paslon']?>" id="first-name"  class="form-control col-md-7 col-xs-12">
                         </div>
 					  </div>
 
@@ -29,7 +29,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Image Paslon 
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="file" name="image_paslon" value="<?=$edit['image_paslon']?>"  id="first-name"  class="form-control col-md-7 col-xs-12">
+                          <input type disabled="file" name="image_paslon" value="<?=$edit['image_paslon']?>"  id="first-name"  class="form-control col-md-7 col-xs-12">
                         </div>
 					  </div>
 
@@ -37,7 +37,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nama Wakil
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="nama_wakil" value="<?=$edit['nama_wakil']?>" id="first-name"  class="form-control col-md-7 col-xs-12">
+                          <input type disabled="text" name="nama_wakil" value="<?=$edit['nama_wakil']?>" id="first-name"  class="form-control col-md-7 col-xs-12">
                         </div>
 					  </div>   
 
@@ -45,7 +45,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Image Wakil 
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="file" name="image_wakil" value="<?=$edit['image_wakil']?>"  id="first-name"  class="form-control col-md-7 col-xs-12">
+                          <input type disabled="file" name="image_wakil" value="<?=$edit['image_wakil']?>"  id="first-name"  class="form-control col-md-7 col-xs-12">
                         </div>
 					  </div>                   
               
@@ -53,7 +53,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Visi Misi
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                        <textarea class="form-control"  cols="30" rows="9"> <?=$edit['visi']?></textarea>
+                          <textarea name disabled="visi" class="form-control" id="visi" cols="10" rows="10"><?=$edit['visi']?></textarea>
                         </div>
 					  </div>
 
