@@ -78,7 +78,7 @@
                           <br>
                           <br>
                           <br>
-                         <a href="#" onclick="visi();"> <i class="btn btn-danger fa fa-book"> Visi Misi</i> </a>
+                         <a href="#" onclick="visi(<?=$value['id_paslon']?>);"> <i class="btn btn-danger fa fa-book"> Visi Misi</i> </a>
                          <br>
                          <br>
                          <a href="#" onclick="input_pilihan();"> <i class="btn btn-primary fa fa-check-circle"> Pilih</i> </a>
@@ -111,9 +111,9 @@
 					
 			</div>
 			<div class="modal-body">    
-                <input type="hidden" name="id" id="id">
-                <div class="form-group" >
-						<textarea class ="form-control" rows="15" name="visi" id="" required class="form-control">	</textarea>					
+               <div id="isi-visi">
+
+							 </div>			
           </div>
 			</div>
         </form>
@@ -142,8 +142,18 @@
 </div>
 <script>
 function visi(id){
-  $("#id").val(id);
+	$.ajax({
+		type: "POST",
+		url: "<?=base_url();?>masyarakat/detail_paslon",
+		data: {id:id},
+		dataType: "JSON",
+		success: function (response) {
+			console.log(response);
+			$("#isi-visi").text(response.visi);
   $("#visi").modal("show");
+
+		}
+	});
 }
 </script>
 
