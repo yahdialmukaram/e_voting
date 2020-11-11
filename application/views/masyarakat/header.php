@@ -84,7 +84,7 @@
                 <ul class="nav side-menu">
 
                   <li><a href="<?=base_url();?>masyarakat/home/"><i class="fa fa-dashboard"></i> Home <span class="fa fa-chevron"></span></a>
-                  <li><a href="<?=base_url();?>controller/data_user/"><i class="fa fa-user"></i> Menu Memilih </a>
+                  <li><a href="<?=base_url();?>masyarakat/input_pilihan/"><i class="fa fa-user"></i> Input Pilihan Anda</a>
               
                   </li>
         
@@ -133,76 +133,112 @@
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
                    
-                    <li><a href="<?= base_url();?>c_login/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><a href="<?= base_url();?>c_login/logout"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                    <!-- <li><a href="<?= base_url();?>masyarakat/edit_profil"><i class="fa fa-edit"></i> Edit Profil</a></li> -->
+                   <li> <a href="#" onclick="edit_profil();"> <i class="fa fa-edit"> Edit Profil</i> </a></li>
                   </ul>
                 </li>
 
-                <li role="presentation" class="dropdown">
-                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="badge bg-green">6</span>
-                  </a>
-                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="text-center">
-                        <a>
-                          <strong>See All Alerts</strong>
-                          <i class="fa fa-angle-right"></i>
-                        </a>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
               </ul>
             </nav>
           </div>
         </div>
         <!-- /top navigation -->
+
+ <!-- modal edit  data -->
+<div class="modal fade" id="edit_profil" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+	<div class="modal-dialog modal-dialog" role="document">
+		<div class="modal-content">
+			<form action="<?=base_url();?>controller/edit_profil" method="post">
+			<div class="modal-header">
+				<h5 class="modal-title">Edit Profil</h5>
+			</div>
+
+      <div class="modal-body">
+          <form action="<?=base_url();?>controller/save_paslon/" method="POST" enctype="multipart/form-data">
+          <div class="form-group" >
+						<label for="exampleInputEmail1">Nik</label>
+						<input type="text" name="nik" value="" id="" required class="form-control">						
+          </div>
+
+          <div class="form-group" >
+						<label for="exampleInputEmail1">Nama</label>
+						<input type="text" name="nama" id="" required class="form-control">						
+          </div>
+
+          <div class="form-group" >
+						<label for="exampleInputEmail1">Alamat</label>
+						<textarea class="form-control" name="alamat" id="" required ></textarea>						
+          </div>
+
+          <div class="form-group" >
+						<label for="exampleInputEmail1">Tempat lahir</label>
+						<input type="text" name="tempat lahir" id="" required class="form-control">						
+          </div>
+
+          <div class="form-group" >
+						<label for="exampleInputEmail1">Tanggal lahir</label>
+						<input type="text" name="tanggal_lahir" id="" required class="form-control">						
+          </div>
+
+          <div class="form-group">
+												<label for="exampleInputEmail1">Jenis Kelamin
+												</label>
+											
+													<select name="jenis_kelamin" id="" class="form-control">
+														<option>Laki Laki</option>
+														<option>Perempuan</option>
+													</select>
+		                     </div>
+
+          <div class="form-group" >
+						<label for="exampleInputEmail1">No hp</label>
+						<input type="text" name="no_hp" id="" required class="form-control">						
+          </div>
+
+          <div class="form-group">
+										    <label for="exampleInputEmail1">Agama
+												</label>
+													<select name="agama" id="" class="form-control">
+														<option>Islam</option>
+														<option>Kristen</option>
+														<option>Hindu</option>
+														<option>Budha</option>
+													</select>
+												</div>
+
+                        <div class="form-group" >
+						<label for="exampleInputEmail1">Foto Ktp</label>
+						<input type="file" name="foto_ktp" id="" class="form-control">						
+          </div>
+
+                        <div class="form-group">
+                        <label for="exampleInputEmail1">Staus Pernikahan
+												</label>
+										
+													<select name="status_perkawinan" id="" class="form-control">
+														<option>Sudah Menikah</option>
+														<option>Belum Menikah</option>
+													</select>
+												</div>
+
+                    </div>
+
+			<!-- <div class="modal-body">Yakin Akan Edit Data Ini ?
+				<input type="hidden" name="id" id="id">
+			</div> -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+				<button type="submit" class="btn btn-primary">Update</button>
+			</div>
+      </form>
+		</div>
+	</div>
+</div>
+<script>
+function edit_profil(id){
+  $("#id").val(id);
+  $("#edit_profil").modal("show");
+}
+</script>
+

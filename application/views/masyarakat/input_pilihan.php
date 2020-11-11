@@ -13,7 +13,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Data Paslon</h2>
+                    <h2>Paslon</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -45,9 +45,7 @@
                   </div>
                   <?php endif; ?>
 
-                  <button type="button" class="btn btn-primary fa fa-plus" data-toggle="modal" data-target="#modelId">
-                  Tambah Paslon
-                </button>
+            
                   <div class="x_content">
                 
                     <table id="datatable" class="table table-striped table-bordered">
@@ -56,10 +54,7 @@
                           <th style="width: 1%;">No</th>
                           <th style="text-align: center;">Ketua Paslon</th>
                           <th style="text-align: center;">Wakil Paslon</th>
-                          <th style="width: 5%;">Jumlah Suara </th>
-                          <th>Action</th>
-                          <th></th>
-                         
+                          <th style="width: 10%;">Aksi</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -70,21 +65,26 @@
                           
                           <td style="text-align: center;"><?=$value['nama_paslon'];?><hr><img style="width: 250px;height: 250px;  "
                           src="<?=base_url();?>uploads/original_image/<?=$value['image_paslon'];?>">
+                         
                         </td>                       
                           <td style="text-align: center;"><?=$value['nama_wakil'];?><hr><img style="width: 250px;height: 250px;  "
                           src="<?=base_url();?>uploads/original_image/<?=$value['image_wakil'];?>">
                         </td>          
-                        <td><?= $value['jumlah_suara'];?> 
-                      </td>             
+                        <!-- <td><?= $value['visi']?></td> -->
+                                <td>
+                          <br>
+                          <br>
+                          <br>
+                          <br>
+                          <br>
+                          <br>
+                         <a href="#" onclick="visi();"> <i class="btn btn-danger fa fa-book"> Visi Misi</i> </a>
+                         <br>
+                         <br>
+                         <a href="#" onclick="input_pilihan();"> <i class="btn btn-primary fa fa-check-circle"> Pilih</i> </a>
+                                  </td>
                           
-                          <td>
-										<a href="<?php echo base_url(); ?>controller/edit_paslon/<?=$value['id_paslon']?>" class="btn btn-info btn-xs"> <i class="fa fa-wrench"></i> Edit </a>
-<br>
-										<a href="<?php echo base_url(); ?>controller/details_paslon/<?=$value['id_paslon'];?>"class="btn btn-warning btn-xs"> <i class="fa fa-search-plus"></i> Details</a>
-<br>				
-										<a href="#" onclick="hapus_data(<?=$value['id_paslon']?>);" class="btn btn-danger btn-xs"> <i class="fa fa-trash"> Delete</i> </a>
-                      <hr>
-									</td>
+                        
               
                           </tr>
                           <?php endforeach; ?>
@@ -97,68 +97,40 @@
           </div>
         </div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Input Paslon</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-          <form action="<?=base_url();?>controller/save_paslon/" method="POST" enctype="multipart/form-data">
-          <div class="form-group" >
-						<label for="exampleInputEmail1">Nama Paslon</label>
-						<input type="text" name="nama_paslon" id="" required class="form-control" placeholder="Input nama paslon">						
-          </div>
-          
-          <div class="form-group">
-						<label for="exampleInputEmail1">Foto Paslon</label>
-						<input type="file" name="image_paslon" id="" required class="form-control">						
-          </div>
-          
-          <div class="form-group">
-						<label for="exampleInputEmail1">Nama Wakil</label>
-						<input type="text" name="nama_wakil" id="" required class="form-control" placeholder="Input wakil">						
-          </div>
-          
-          <div class="form-group">
-						<label for="exampleInputEmail1">Foto Wakil</label>
-						<input type="file" name="image_wakil" id="" required class="form-control">						
-          </div>
-          
-
-          <div class="form-group">
-						<label for="exampleInputEmail1">Visi Misi</label>
-						<textarea type="text" name="visi" id="" required class="form-control" cols="30"
-            rows="7"> </textarea>						
-					</div>
-          
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save</button>
-        </div>          
-      </form>
-      </div>
-    </div>
-  </div>
   
          </div>
 
+         
+ <!-- modal visi misi -->
+<div class="modal fade" id="visi" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<form action="<?=base_url();?>controller/delete_paslon" method="post">
+			<div class="modal-header">
+				<h5 class="modal-title">Visi Misi Kandidat</h5>
+					
+			</div>
+			<div class="modal-body">    
+                <input type="hidden" name="id" id="id">
+                <div class="form-group" >
+						<textarea class ="form-control" rows="15" name="visi" id="" required class="form-control">	</textarea>					
+          </div>
+			</div>
+        </form>
+		</div>
+	</div>
+</div>
 
  <!-- modal konfirmasi hapus data -->
-<div class="modal fade" id="konfirmasi" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+<div class="modal fade" id="pilih" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
 	<div class="modal-dialog modal-sm" role="document">
 		<div class="modal-content">
 			<form action="<?=base_url();?>controller/delete_paslon" method="post">
 			<div class="modal-header">
-				<h5 class="modal-title">Konfirmasi Hapus</h5>
+				<h5 class="modal-title">Konfirmasi Pilihan Anda</h5>
 					
 			</div>
-			<div class="modal-body">Yakin Akan Hapus Data Kandidat ?
+			<div class="modal-body">Yakin Akan Memilih Kandidat Ini ?
 				<input type="hidden" name="id" id="id">
 			</div>
 			<div class="modal-footer">
@@ -169,8 +141,15 @@
 	</div>
 </div>
 <script>
-function hapus_data(id){
+function visi(id){
   $("#id").val(id);
-  $("#konfirmasi").modal("show");
+  $("#visi").modal("show");
+}
+</script>
+
+<script>
+function input_pilihan(id){
+  $("#id").val(id);
+  $("#pilih").modal("show");
 }
 </script>

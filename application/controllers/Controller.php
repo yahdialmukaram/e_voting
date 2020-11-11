@@ -169,6 +169,14 @@ public function __construct()
         $this->load->view('admin/edit_paslon', $data);
         $this->load->view('admin/footer');    
     }
+    public function details_paslon($id)
+    {
+        $judul ['title'] = 'halaman details paslon';
+        $data['edit'] = $this->model->edit_paslon($id);
+        $this->load->view('admin/header', $judul);
+        $this->load->view('admin/details', $data);
+        $this->load->view('admin/footer');    
+    }
 
     public function update_paslon($id)
     {

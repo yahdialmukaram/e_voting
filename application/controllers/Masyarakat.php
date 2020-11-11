@@ -23,10 +23,6 @@ public function __construct()
 		$this->load->view('masyarakat/isi_data_diri', $judul);  
 	}
        
-       
-		// redirect('masyarakat');
-		// echo $this->session->userdata('id_user');
-
     }
     public function home()
     {
@@ -40,7 +36,6 @@ public function __construct()
     }
     public function save_data_diri()
     {
-     
         $data = [
             'nik'=> $this->input->post('nik'),
             'nama'=> $this->input->post('nama'),
@@ -57,9 +52,25 @@ public function __construct()
          $this->Model_masyarakat->save_data_diri($data);
          $this->session->set_flashdata('success', 'data di simpan');
          redirect('masyarakat/home');
-        
-        
       
+    }
+
+    public function edit_profil()
+    {
+        $judul['title'] = 'Edit Profil';
+        $this->load->view('masyarakat/header', $judul);
+        $this->load->view('masyarakat/edit_profil');
+        $this->load->view('masyarakat/footer');
+
+    }
+    public function input_pilihan()
+    {
+        $judul['title'] = 'Input pilihan';
+        $data ['paslon'] = $this->model->get_paslon();
+        $this->load->view('masyarakat/header', $judul);
+        $this->load->view('masyarakat/input_pilihan', $data);
+        $this->load->view('masyarakat/footer');
+
     }
     
 
