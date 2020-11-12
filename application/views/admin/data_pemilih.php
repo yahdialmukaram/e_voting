@@ -81,13 +81,13 @@
                           <td><?=$value['no_hp'];?></td>
                           <td><?=$value['agama'];?></td>
                           <td><?=$value['status_perkawinan'];?></td>
-                          <td><label for="" class="btn btn-warning btn-xs"><?= $value['status'];?></label></td>
+                          <td><label for=""  class="btn btn-warning btn-xs"><?= $value['status'];?></label></td>
                           <td><?=$value['foto_ktp'];?></td>
 
-                      <td>
+                      <!-- <td>
                       <a href="<?php echo base_url(); ?>c_admin/edit_siswa/"
                           class="btn btn-danger btn-xs"> <i class="fa fa-edit"></i> Aktifkan </a>
-                      </td>
+                      </td> -->
                           </tr>
                         <?php endforeach; ?>
                      

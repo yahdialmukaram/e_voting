@@ -54,7 +54,6 @@
                           <th style="width: 1%;">No</th>
                           <th style="text-align: center;">Ketua Paslon</th>
                           <th style="text-align: center;">Wakil Paslon</th>
-                          <th style="width: 10%;">Status</th>
                           <th style="width: 10%;">Aksi</th>
                         </tr>
                       </thead>
@@ -70,23 +69,7 @@
                         </td>                       
                           <td style="text-align: center;"><?=$value['nama_wakil'];?><hr><img style="width: 200px;height: 200px;  "
                           src="<?=base_url();?>uploads/original_image/<?=$value['image_wakil'];?>">
-                        </td>          
-                        <td>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <?php if ($value['status_pilihan'] =="" ):?>
-                        <label for="" class="btn btn-warning fa fa-history"> Draf</label></td>
-                        <?php elseif ($value['status_pilihan'] == "1"):?>
-                        <label for="" class="btn btn-warning  fa fa-history"> Verifikasi</label>
-                        <?php elseif ($value['status_pilihan']=="3"):?>
-                        <label for="" class="btn btn-success fa fa-refresh"> success</label>
-                        <?php elseif ($value['status_pilihan'] =="2"):?>
-                        <label for="" class="btn btn-danger fa fa-remove"> Di tolak</label>
-                        <?php endif;?>
-                        </td>
+                      
                                 <td>
                           <br>
                           <br>
@@ -96,10 +79,10 @@
                          <a href="#" onclick="visi(<?=$value['id_paslon']?>);"> <i class="btn btn-danger fa fa-book"> Visi Misi</i> </a>
                          <br>
 												 <br>
-												 <?php if ($status==false):?>
+												 <?php if ($status == false):?>
 													<a href="#" onclick="verifikasi();"> <i class="btn btn-primary fa fa-check-circle"> Pilih</i> </a>
 													<?php else: ?>
-												 <a href="#" onclick="input_pilihan();"> <i class="btn btn-primary fa fa-check-circle"> Pilih</i> </a>
+												 <a href="#" onclick="input_pilihan();"> <i class="btn btn-primary fa fa-edit"> Pilih</i> </a>
 													<?php endif;?>
                                   </td>
                           </tr>
@@ -123,14 +106,19 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title">Visi Misi Kandidat</h5>
-					
+				
 			</div>
+      
 			<div class="modal-body">    
                <div id="isi-visi">
 
 							 </div>			
+               <div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+			</div>
           </div>
 			</div>
+      
         </form>
 		</div>
 	</div>
