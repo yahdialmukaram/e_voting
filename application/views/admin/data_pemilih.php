@@ -46,7 +46,13 @@
                     Tambah User
                   </button> -->
                   <div class="x_content">
-                
+										<?php if ($this->session->flashdata('success')) :?>
+										<div class="alert alert-success" role="alert">
+											<strong>Success</strong>
+											<p><?=$this->session->flashdata('success');
+											?></p>
+										</div>
+										<?php endif;?>
                     <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                         <tr>
@@ -81,8 +87,16 @@
                           <td><?=$value['no_hp'];?></td>
                           <td><?=$value['agama'];?></td>
                           <td><?=$value['status_perkawinan'];?></td>
-                          <td><label for=""  class="btn btn-warning btn-xs"><?= $value['status'];?></label></td>
-                          <td><?=$value['foto_ktp'];?></td>
+													<td>
+														<?php if ($value['status']==0):?>
+													<a href="#" class="label label-danger" onclick="verifikasi(<?=$value['id_masyarakat']?>);"><i class="fa fa-ban"></i> Belum Verifikasi</a>
+													<?php elseif ($value['status']==1):?>
+													<a href="#" class="label label-success" onclick="cancel_verifikasi(<?=$value['id_masyarakat']?>)"><i class="fa fa-check"></i> Terverifikasi</a>
+													<?php elseif ($value['status']==2):?>
+													<a href="#" class="label label-warning"><i class="fa fa-comment-o"></i> Telah Memilih</a>
+													<?php endif;?>
+													</td>
+                                         <td><?=$value['foto_ktp'];?></td>
 
                       <!-- <td>
                       <a href="<?php echo base_url(); ?>c_admin/edit_siswa/"
@@ -126,3 +140,43 @@
 		</div>
   </div>
          </div>
+
+
+				 
+				 <!-- Modal verifikasi-->
+				 <div class="modal fade" id="verifikasi" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+					 <div class="modal-dialog" role="document">
+						 <div class="modal-content">
+							 <form class="form-verifikasi" method="post">
+							 <div class="modal-header">
+								 <h5 class="modal-title">Konfirmasi Verifikasi</h5>
+									
+							 </div>
+							 <div class="modal-body">
+								 <input type="hidden" name="id" value="" class="id_masyarakat">
+								 <div class="text"></div>
+							 </div>
+							 <div class="modal-footer">
+								 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+								 <button type="submit" class="btn btn-primary">Ya</button>
+							 </div>
+							 </form>
+						 </div>
+					 </div>
+				 </div>
+
+				 <script>
+					 function verifikasi(id) { 
+						 $(".form-verifikasi").attr("action",'<?=base_url();?>controller/update_status/verifikasi')
+						 $(".id_masyarakat").val(id);
+						 $(".text").text("Yakin akan verifikasi data ini ?")
+						 $("#verifikasi").modal("show");
+
+					  }
+						function cancel_verifikasi(id) { 
+							$(".form-verifikasi").attr("action",'<?=base_url();?>controller/update_status/cancel')
+						 $(".id_masyarakat").val(id);
+						 $(".text").text("Yakin akan batalkan verifikasi untuk data ini  ?")
+						 $("#verifikasi").modal("show");
+						 }
+				 </script>

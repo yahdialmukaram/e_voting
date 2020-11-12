@@ -87,7 +87,21 @@ public function __construct()
         } else {
             return $response['status'] = 'image not found';
         }
-    }
+	}
+	// function update status
+	public function update_status($jenis)
+	{
+		$id=$this->input->post('id');
+		
+		if ($jenis=='verifikasi') {
+			$this->model->update_status($id,['status'=>1]);
+			$this->session->set_flashdata('success', 'Data Masyarakat yang anda pilih berhasi di verifikasi');
+		} elseif ($jenis=='cancel') {
+			$this->model->update_status($id,['status'=>0]);
+			$this->session->set_flashdata('success', 'Verifikasi data masyarakat yang anda pilih berhasil di batalkan');
+		}
+		redirect('controller/data_pemilih');
+	}
     public function save_paslon()
     {
         $image = $this->upload('image_paslon');
@@ -114,7 +128,6 @@ public function __construct()
         $id = $this->input->post('id');
         $this->model->delete_paslon($id);
         $this->session->set_flashdata('error', 'data paslon telah di hapus');
-        
         redirect('controller/data_paslon');
     }
     public function delete_admin()

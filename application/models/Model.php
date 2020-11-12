@@ -88,7 +88,13 @@ class Model extends CI_Model
 		return $this->db->get()->row_array();
 		
 	}
-	
+	// function update status masyarakat
+	public function update_status($id,$data)
+	{
+		$this->db->where('id_masyarakat', $id);
+		$this->db->update('table_masyarakat', $data);
+		
+	}
     
     
 
