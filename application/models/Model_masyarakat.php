@@ -14,6 +14,14 @@ class Model_masyarakat extends CI_Model
 		
 	}
 
+	public function data_diri($id)
+	{
+		$this->db->from('table_masyarakat');
+		$this->db->where('id_user',$this->session->userdata('id_user'));
+		return $this->db->get()->row_array();
+		
+	}
+
 }
 
 /* End of file Model_masyarakat.php */

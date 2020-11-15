@@ -14,7 +14,7 @@
                 <br>
                 <br>
                 <br>
-                 <center> <div class="count">SELAMAT DATANG <?= $this->session->userdata('nama');?> ANDA BELUM BISA MEMILIH, TUNGGU KONFIRMASI DARI ADMIN </div> </center>
+                 <center> <div class="count">SELAMAT DATANG <?= $this->session->userdata('nama');?> </div> </center>
 									<br>
 								
                   <br>

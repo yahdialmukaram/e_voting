@@ -69,7 +69,7 @@
                         </td>                       
                           <td style="text-align: center;"><?=$value['nama_wakil'];?><hr><img style="width: 200px;height: 200px;  "
                           src="<?=base_url();?>uploads/original_image/<?=$value['image_wakil'];?>">
-                      
+							        
                                 <td>
                           <br>
                           <br>

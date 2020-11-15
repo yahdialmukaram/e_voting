@@ -175,20 +175,18 @@
              
 				 </script>
 
-<script>
-	function show_photo(id) { 
-		$.ajax({
-			type: "POST",
-			url: "<?=base_url()?>controller/photo_check",
-			data: {id:id},
-			dataType: "JSON",
-			success: function (response) {
-				console.log(response);
-				$("#photo-here").html(`
-					<img style="width: 560px;height: 300px;"
-						src="<?=base_url();?>uploads/original_image/`+response.ktp+`">`);
-				$("#modal-photo").modal("show");
-			}
-		});
-	 }
-</script>
+      <script>
+        function show_photo(id) { 
+          $.ajax({
+            type: "POST",
+            url: "<?=base_url()?>controller/photo_check",
+            data: {id:id},
+            dataType: "JSON",
+            success: function (response) {
+              console.log(response);
+              $("#photo-here").html(`<img style="width: 560px;height: 300px;"src="<?=base_url();?>uploads/original_image/`+response.ktp+`">`);
+              $("#modal-photo").modal("show");
+            }
+          });
+        }
+      </script>

@@ -114,7 +114,17 @@ public function __construct()
 		$id=$this->input->post('id');
 		$data=$this->model->edit_paslon($id);
 		echo json_encode($data);
-	}
+    }
+    
+    public function data_diri()
+    {
+        $judul ['title'] = 'Data diri';
+        $data ['data_diri'] = $this->Model_masyarakat->data_diri($this->session->userdata('id_user'));
+        $this->load->view('masyarakat/header', $judul);
+        $this->load->view('masyarakat/data_diri', $data);
+        $this->load->view('masyarakat/footer');
+        
+    }
     
 
 
