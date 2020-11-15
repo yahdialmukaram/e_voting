@@ -207,9 +207,17 @@
 											<div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12"> Image</label>
                         <div class="col-md-8 col-sm-12 col-xs-12">
-                          <input type="file" name="foto_ktp"required  class="form-control" placeholder="" >
-                        </div>
-                      </div>
+                          <input type="file" name="foto_ktp" required  class="form-control" placeholder="" onchange="loadFile(event)" >
+						</div>
+					  </div>
+					  <div class="form-group">
+												<label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+												<div class="col-md-9 col-sm-9 col-xs-12">
+													<img id="output" class="foto-mahasiswa"
+														src="<?=base_url();?>untuk_tampilan/no-image-found-360x260.png"
+														alt="">
+												</div>
+											</div>
 
 											<div class="ln_solid"></div>
 
@@ -293,14 +301,7 @@
 				var output = document.getElementById('output');
 				output.src = reader.result;
 			};
-			reader.readAsDataURL(event.target.files[0]);
-		};
-		function loadFile2(event) {
-			var reader = new FileReader();
-			reader.onload = function () {
-				var output = document.getElementById('output2');
-				output.src = reader.result;
-			};
+			console.log(reader);
 			reader.readAsDataURL(event.target.files[0]);
 		};
 		$('.simpan').click(function (e) {
