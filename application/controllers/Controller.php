@@ -173,6 +173,7 @@ public function __construct()
     public function update_password($id)
     {
         $update = [
+            'username' =>$this->input->post('username'),
             'password' =>md5($this->input->post('password')),  
         ];
         $this->model->update_password($id,$update);
@@ -222,7 +223,7 @@ public function __construct()
         $this->session->set_flashdata('success','Data berhasil di ubah');
         redirect('controller/data_paslon');
 	}
-	public function photo_check(Type $var = null)
+	public function photo_check()
 	{
 		$id=$this->input->post('id');
 		$data=$this->model->get_foto($id);

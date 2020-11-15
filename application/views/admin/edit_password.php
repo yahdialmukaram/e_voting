@@ -28,6 +28,12 @@
                     <form class="form-horizontal form-label-left input_mask" action="<?=base_url();?>controller/update_password/<?=$edit['id_user'];?>" method="POST" enctype="multipart/form-data">
           
                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Ubah Username</label>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                          <input type="text" name="username"  class="form-control" placeholder="ubah username" required>
+                        </div>
+                      </div>
+                      <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Ubah Password</label>
                         <div class="col-md-4 col-sm-12 col-xs-12">
                           <input type="password" name="password"  class="form-control" placeholder="ubah password" required>

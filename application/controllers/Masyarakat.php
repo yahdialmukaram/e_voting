@@ -60,12 +60,7 @@ public function __construct()
         } else {
             return $response=['status'=> 'error'];
         }
-        function ambildataid()
-        {
-           $id_masyarakat = $this->input->post('id_masyarakat'); //Menangkap inputan no induk
-           $data = $this->model->getdataid($id_masyarakat); // Menampung value return dari fungsi getDataByNoinduk ke variabel data
-           echo json_encode($data); 
-       }
+    
 	}
     public function save_data_diri()
     {
@@ -89,15 +84,10 @@ public function __construct()
              $this->Model_masyarakat->save_data_diri($data);
                       $this->session->set_flashdata('success', 'data di simpan');
 		     redirect('masyarakat/home');
-		
         }
         else {
             $this->session->set_flashdata('error','Foto yang anda masukan tidak sesui dengan kreteria sisten !!');
-            redirect('masyarakat');
-        
-     
-    
-      
+            redirect('masyarakat'); 
 	}
 	// print_r($data);  
 }
