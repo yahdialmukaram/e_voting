@@ -46,13 +46,20 @@
                     Tambah User
                   </button> -->
                   <div class="x_content">
-										<?php if ($this->session->flashdata('success')) :?>
-										<div class="alert alert-success" role="alert">
-											<strong>Success</strong>
-											<p><?=$this->session->flashdata('success');
-											?></p>
-										</div>
-										<?php endif;?>
+								  <!-- alert simpan data -->
+                  <?php if ($this->session->flashdata('success')):?>
+                  <div id="pesan" class="alert alert-success" role="alert">
+                    <strong><?=$this->session->flashdata('success');?></strong>
+                  </div>
+                  <?php endif;?>
+                  <!-- aler hapus data -->
+                  <?php if ($this->session->flashdata('error')):?>
+                  <div id="pesan" class="alert alert-danger" role="alert">
+                    <strong><?=$this->session->flashdata('error');?></strong>
+                  </div>
+                  <?php endif; ?>
+                    
+                    
                     <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                         <tr>
@@ -96,12 +103,10 @@
 													<a href="#" class="label label-warning"><i class="fa fa-comment-o"></i> Telah Memilih</a>
 													<?php endif;?>
 													</td>
-                                         <td><?=$value['foto_ktp'];?></td>
-
-                      <!-- <td>
-                      <a href="<?php echo base_url(); ?>c_admin/edit_siswa/"
-                          class="btn btn-danger btn-xs"> <i class="fa fa-edit"></i> Aktifkan </a>
-                      </td> -->
+                          <td>
+										<button type="button" class="btn btn-warning btn-xs " onclick="show_photo('<?=$value['id_masyarakat']?>')">Klik foto </button>
+                 					 </td>
+                     
                           </tr>
                         <?php endforeach; ?>
                      
@@ -146,7 +151,7 @@
 				 <!-- Modal verifikasi-->
 				 <div class="modal fade" id="verifikasi" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
 					 <div class="modal-dialog" role="document">
-						 <div class="modal-content">
+						 <div class="modal-content modal-sm">
 							 <form class="form-verifikasi" method="post">
 							 <div class="modal-header">
 								 <h5 class="modal-title">Konfirmasi Verifikasi</h5>
@@ -165,6 +170,25 @@
 					 </div>
 				 </div>
 
+<!-- modal photo -->
+<div class="modal fade" id="modal-photo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+	aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Foto</h5>
+			</div>
+			<div class="modal-body">
+				<div class="form-group" id="photo-here">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 				 <script>
 					 function verifikasi(id) { 
 						 $(".form-verifikasi").attr("action",'<?=base_url();?>controller/update_status/verifikasi')
@@ -179,4 +203,22 @@
 						 $(".text").text("Yakin akan batalkan verifikasi untuk data ini  ?")
 						 $("#verifikasi").modal("show");
 						 }
+             
 				 </script>
+
+<script>
+	function show_photo(id) { 
+		$.ajax({
+			type: "POST",
+			url: "<?=base_url()?>controller/photo_check",
+			data: {id:id},
+			dataType: "JSON",
+			success: function (response) {
+				$("#photo-here").html(`
+					<img style="width: 560px;height: 300px; border-radius:50%"
+						src="<?=base_url();?>uploads/original_image/`+response.image+`">`);
+				$("#modal-photo").modal("show");
+			}
+		});
+	 }
+</script>

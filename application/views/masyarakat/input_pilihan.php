@@ -105,7 +105,7 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Visi Misi Kandidat</h5>
+				<h5 class="modal-title"><i class="btn btn-warning fa fa-volume-down"> Visi Misi Kandidat</i></h5>
 				
 			</div>
       

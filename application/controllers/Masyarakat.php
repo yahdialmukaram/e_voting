@@ -7,6 +7,7 @@ class Masyarakat extends CI_Controller {
 public function __construct()
 {
     parent::__construct();
+    $this->load->library('upload');
     $this->load->model('Model_masyarakat');
     
     //Do your magic here
@@ -34,25 +35,67 @@ public function __construct()
         // redirect('masyarakat');
 
     }
+    // tambah kan fungsi upload  untuk semua
+    public function upload($name)
+    {
+        $config['upload_path'] = './uploads/original_image/'; //path folder
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+        $config['encrypt_name'] = true; //nama yang terupload nantinya
+
+        $this->upload->initialize($config);
+        if (!empty($_FILES[$name]['name'])) {
+            if ($this->upload->do_upload($name)) {
+                $gbr = $this->upload->data();
+               
+                $response['data'] = $gbr['file_name'];
+                $response['status'] = 'success';
+                return $response;
+            } else {
+                $response['status'] = 'error';
+                return $response;
+                // redirect('c_admin/V_berita');
+            }
+
+        } else {
+            return $response['status'] = 'image not found';
+        }
+        function ambildataid()
+        {
+           $id_masyarakat = $this->input->post('id_masyarakat'); //Menangkap inputan no induk
+           $data = $this->model->getdataid($id_masyarakat); // Menampung value return dari fungsi getDataByNoinduk ke variabel data
+           echo json_encode($data); 
+       }
+	}
     public function save_data_diri()
     {
-        $data = [
-            'nik'=> $this->input->post('nik'),
-            'nama'=> $this->input->post('nama'),
-            'alamat'=> $this->input->post('alamat'),
-            'tempat_lahir'=> $this->input->post('tempat_lahir'),
-            'tanggal_lahir'=> $this->input->post('tanggal_lahir'),
-            'jenis_kelamin'=> $this->input->post('jenis_kelamin'),
-            'no_hp'=> $this->input->post('no_hp'),
-			'agama'=> $this->input->post('agama'),
-			'id_user'=>$this->session->userdata('id_user'),
-            // 'foto_ktp'=> $this->input->post('foto_ktp'),
-			'status_perkawinan'=> $this->input->post('status_perkawinan'),
-			'status'=>false,
-         ];
-         $this->Model_masyarakat->save_data_diri($data);
-         $this->session->set_flashdata('success', 'data di simpan');
-         redirect('masyarakat/home');
+
+        $image = $this->upload('image');
+        if ($image['status'] =='success') {
+            $data = [
+                'nik'=> $this->input->post('nik'),
+                'nama'=> $this->input->post('nama'),
+                'alamat'=> $this->input->post('alamat'),
+                'tempat_lahir'=> $this->input->post('tempat_lahir'),
+                'tanggal_lahir'=> $this->input->post('tanggal_lahir'),
+                'jenis_kelamin'=> $this->input->post('jenis_kelamin'),
+                'no_hp'=> $this->input->post('no_hp'),
+                'agama'=> $this->input->post('agama'),
+                'id_user'=>$this->session->userdata('id_user'),
+                'status_perkawinan'=> $this->input->post('status_perkawinan'),
+                'foto_ktp'=>$image['data'], 
+                'status'=>false,
+             ];
+             $this->Model_masyarakat->save_data_diri($data);
+            //  print_r($data);
+             $this->session->set_flashdata('success', 'data di simpan');
+             redirect('masyarakat/home');
+        }
+        // else {
+        //     $this->session->set_flashdata('error','Foto yang anda masukan tidak sesui dengan kreteria sisten !!');
+        //     redirect('masyarakat');
+        
+     
+    
       
     }
 

@@ -94,7 +94,12 @@ class Model extends CI_Model
 		$this->db->where('id_masyarakat', $id);
 		$this->db->update('table_masyarakat', $data);
 		
-	}
+    }
+    
+    function getdataid($id_masyarakat){
+        $this->db->where('id_masyarakat',$id_masyarakat); // where no induk
+        return $this->db->get('table_masyarakat')->result_array(); // me-return hasil dari get tb_siswa
+    }
     
     
 

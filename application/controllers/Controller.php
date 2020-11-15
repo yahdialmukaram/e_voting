@@ -87,6 +87,12 @@ public function __construct()
         } else {
             return $response['status'] = 'image not found';
         }
+        function ambildataid()
+        {
+           $id_masyarakat = $this->input->post('id_masyarakat'); //Menangkap inputan no induk
+           $data = $this->model->getdataid($id_masyarakat); // Menampung value return dari fungsi getDataByNoinduk ke variabel data
+           echo json_encode($data); 
+       }
 	}
 	// function update status
 	public function update_status($jenis)
@@ -95,10 +101,10 @@ public function __construct()
 		
 		if ($jenis=='verifikasi') {
 			$this->model->update_status($id,['status'=>1]);
-			$this->session->set_flashdata('success', 'Data Masyarakat yang anda pilih berhasi di verifikasi');
+			$this->session->set_flashdata('success', 'Data Masyarakat yang anda pilih berhasil di verifikasi');
 		} elseif ($jenis=='cancel') {
 			$this->model->update_status($id,['status'=>0]);
-			$this->session->set_flashdata('success', 'Verifikasi data masyarakat yang anda pilih berhasil di batalkan');
+			$this->session->set_flashdata('error', 'Verifikasi data masyarakat yang anda pilih berhasil di batalkan');
 		}
 		redirect('controller/data_pemilih');
 	}
