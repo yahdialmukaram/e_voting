@@ -100,9 +100,7 @@
 													<a href="#" class="label label-warning"><i class="fa fa-comment-o"></i> Telah Memilih</a>
 													<?php endif;?>
 													</td>
-                          <td>
-									          	<button type="button" class="label label-primary" onclick="show_photo('<?=$value['id_masyarakat']?>')"><i class= 'fa fa-check'> Klik foto</i> </button>
-                 					 </td>
+                          <td><button type="button" class="label label-primary" onclick="show_photo('<?=$value['id_masyarakat']?>')"><i class= 'fa fa-check'> Klik foto</i> </button></td>
                           <td><?=$value['no_hp'];?></td>
                           <td><?=$value['agama'];?></td>
                           <td><?=$value['status_perkawinan'];?></td>
@@ -118,34 +116,6 @@
             </div>
           </div>
         </div>
-
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-	aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Tambah Paslon</h5>
-			</div>
-			<div class="modal-body">
-
-				<form action="<?=base_url();?>masyarakat/save_usulan" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-						<label for="exampleInputEmail1">Silahkan Masukan Usulan Pembangunan Anda</label>
-            <textarea name="usulan" id="usulan" class="form-control" cols="40" rows="12"></textarea>
-					</div>
-          </div>
-          
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="submit" class="btn btn-primary">Save</button>
-			</div>
-			</form>
-		</div>
-  </div>
-         </div>
-
-
 				 
 				 <!-- Modal verifikasi-->
 				 <div class="modal fade" id="verifikasi" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
@@ -175,7 +145,7 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Foto</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Foto KTP</h5>
 			</div>
 			<div class="modal-body">
 				<div class="form-group" id="photo-here">
@@ -215,7 +185,7 @@
 			success: function (response) {
 				console.log(response);
 				$("#photo-here").html(`
-					<img style="width: 560px;height: 300px; border-radius:50%"
+					<img style="width: 560px;height: 300px;"
 						src="<?=base_url();?>uploads/original_image/`+response.ktp+`">`);
 				$("#modal-photo").modal("show");
 			}

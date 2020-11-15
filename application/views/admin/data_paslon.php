@@ -79,9 +79,9 @@
                           
                           <td>
 										<a href="<?php echo base_url(); ?>controller/edit_paslon/<?=$value['id_paslon']?>" class="btn btn-info btn-xs"> <i class="fa fa-wrench"></i> Edit </a>
-<br>
+                    <br>
 										<a href="<?php echo base_url(); ?>controller/details_paslon/<?=$value['id_paslon'];?>"class="btn btn-warning btn-xs"> <i class="fa fa-search-plus"></i> Details</a>
-<br>				
+                    <br>				
 										<a href="#" onclick="hapus_data(<?=$value['id_paslon']?>);" class="btn btn-danger btn-xs"> <i class="fa fa-trash"> Delete</i> </a>
                       <hr>
 									</td>
