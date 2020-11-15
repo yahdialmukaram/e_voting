@@ -47,17 +47,18 @@ public function __construct()
             if ($this->upload->do_upload($name)) {
                 $gbr = $this->upload->data();
                
-                $response['data'] = $gbr['file_name'];
-                $response['status'] = 'success';
+				$response=['status'=>'success',
+				'data'=>$gbr['file_name']
+			];
                 return $response;
             } else {
-                $response['status'] = 'error';
+                $response=['status' => 'error'];
                 return $response;
                 // redirect('c_admin/V_berita');
             }
 
         } else {
-            return $response['status'] = 'image not found';
+            return $response=['status'=> 'error'];
         }
         function ambildataid()
         {
@@ -86,18 +87,20 @@ public function __construct()
                 'status'=>false,
              ];
              $this->Model_masyarakat->save_data_diri($data);
-            //  print_r($data);
-             $this->session->set_flashdata('success', 'data di simpan');
-             redirect('masyarakat/home');
+                      $this->session->set_flashdata('success', 'data di simpan');
+		     redirect('masyarakat/home');
+		
         }
-        // else {
-        //     $this->session->set_flashdata('error','Foto yang anda masukan tidak sesui dengan kreteria sisten !!');
-        //     redirect('masyarakat');
+        else {
+            $this->session->set_flashdata('error','Foto yang anda masukan tidak sesui dengan kreteria sisten !!');
+            redirect('masyarakat');
         
      
     
       
-    }
+	}
+	// print_r($data);  
+}
 
     public function edit_profil()
     {

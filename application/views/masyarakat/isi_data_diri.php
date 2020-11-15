@@ -207,7 +207,7 @@
 											<div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12"> Image</label>
                         <div class="col-md-8 col-sm-12 col-xs-12">
-                          <input type="file" name="foto_ktp" required  class="form-control" placeholder="" onchange="loadFile(event)" >
+                          <input type="file" name="image" required  class="form-control" placeholder="" onchange="loadFile(event)" >
 						</div>
 					  </div>
 					  <div class="form-group">

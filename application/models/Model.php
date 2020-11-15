@@ -99,7 +99,15 @@ class Model extends CI_Model
     function getdataid($id_masyarakat){
         $this->db->where('id_masyarakat',$id_masyarakat); // where no induk
         return $this->db->get('table_masyarakat')->result_array(); // me-return hasil dari get tb_siswa
-    }
+	}
+	public function get_foto($id)
+	{
+		$this->db->from('table_masyarakat');
+		$this->db->select('foto_ktp as ktp');
+		$this->db->where('id_masyarakat', $id);
+		return $this->db->get()->row_array();
+		
+	}
     
     
 

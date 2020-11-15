@@ -221,7 +221,13 @@ public function __construct()
         
         $this->session->set_flashdata('success','Data berhasil di ubah');
         redirect('controller/data_paslon');
-    }
+	}
+	public function photo_check(Type $var = null)
+	{
+		$id=$this->input->post('id');
+		$data=$this->model->get_foto($id);
+		echo json_encode($data);
+	}
   
 
     

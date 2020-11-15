@@ -214,9 +214,10 @@
 			data: {id:id},
 			dataType: "JSON",
 			success: function (response) {
+				console.log(response);
 				$("#photo-here").html(`
 					<img style="width: 560px;height: 300px; border-radius:50%"
-						src="<?=base_url();?>uploads/original_image/`+response.image+`">`);
+						src="<?=base_url();?>uploads/original_image/`+response.ktp+`">`);
 				$("#modal-photo").modal("show");
 			}
 		});
