@@ -80,6 +80,8 @@ public function __construct()
                 'status_perkawinan'=> $this->input->post('status_perkawinan'),
                 'foto_ktp'=>$image['data'], 
                 'status'=>false,
+                'suara' =>0,
+                
              ];
              $this->Model_masyarakat->save_data_diri($data);
                       $this->session->set_flashdata('success', 'data di simpan');
@@ -124,6 +126,21 @@ public function __construct()
         $this->load->view('masyarakat/data_diri', $data);
         $this->load->view('masyarakat/footer');
         
+    }
+    public function input_suara($id)
+    {
+        $suara = $this->Model_masyarakat->check_suara($id);
+        if ($suara > 0) {
+            redirect('masyarakat/home');
+        }else {
+            $this->session->set_flashdata('error',' Pemilihan tidak boleh dari satu kali');
+    
+            redirect('masyarakat/input_pilihan');
+         } 
+        // $suara = [
+        //     'suara' => $this->input->post('suara'),
+        // ];
+        // $this->Model_masyarakat->check_suara($id,$suara);
     }
     
 

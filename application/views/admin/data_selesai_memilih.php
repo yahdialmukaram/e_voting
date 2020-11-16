@@ -54,14 +54,8 @@
                           <th>nik</th>
                           <th>nama</th>
                           <th>alamat</th>
-                          <th>tempat lahir</th>
-                          <th>tanggal lahir</th>
                           <th>jenis kelamin</th>
-                          <th>no hp</th>
-                          <th>agama</th>
-                          <th>status perkawinan</th>
                           <th>status</th>
-                          <th>foto ktp (klik tombol)</th>
                           <th>opsi</th>
                           </th>
                          
@@ -75,15 +69,12 @@
                           <td><?=$value['nik'];?></td>
                           <td><?=$value['nama'];?></td>
                           <td><?=$value['alamat'];?></td>
-                          <td><?=$value['tempat_lahir'];?></td>
-                          <td><?=$value['tanggal_lahir'];?></td>
                           <td><?=$value['jenis_kelamin'];?></td>
-                          <td><?=$value['no_hp'];?></td>
-                          <td><?=$value['agama'];?></td>
-                          <td><?=$value['status_perkawinan'];?></td>
-                          <td><label for="" class="btn btn-primary btn-xs"><?= $value['status'];?></label></td>
-                          <td><?=$value['foto_ktp'];?></td>
-
+                          <td>
+                          <?php if ($value['status']== 1 ) :?>
+                        <a href="#" class="label label-primary"><i class="fa fa-check"></i> Telah Memilih</a>                        
+                        <?php endif;?>
+                          </td>
                       <td>
                       <a href="<?php echo base_url(); ?>c_admin/edit_siswa/"
                           class="btn btn-danger btn-xs"> <i class="fa fa-trash"></i> Delete </a>
@@ -126,3 +117,6 @@
 		</div>
   </div>
          </div>
+
+
+         

@@ -21,6 +21,15 @@ class Model_masyarakat extends CI_Model
 		return $this->db->get()->row_array();
 		
 	}
+	public function check_suara($id)
+	{
+		$this->db->from('table_masyarakat');
+		$this->db->where('id_user',$this->session->userdata('id_user'));
+		$this->db->update('table_masyarakat', $id);
+		
+		
+		
+	}
 
 }
 

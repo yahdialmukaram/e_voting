@@ -74,8 +74,7 @@
                           <td style="text-align: center;"><?=$value['nama_wakil'];?><hr><img style="width: 250px;height: 250px;  "
                           src="<?=base_url();?>uploads/original_image/<?=$value['image_wakil'];?>">
                         </td>          
-                        <td><?= $value['jumlah_suara'];?> 
-                      </td>             
+                        <td>            </td>             
                           
                           <td>
 										<a href="<?php echo base_url(); ?>controller/edit_paslon/<?=$value['id_paslon']?>" class="btn btn-info btn-xs"> <i class="fa fa-wrench"></i> Edit </a>
