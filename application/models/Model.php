@@ -83,7 +83,7 @@ class Model extends CI_Model
 	public function status_masyarakat($id)
 	{
 		$this->db->from('table_masyarakat');
-		$this->db->select('status');
+		$this->db->select('status,suara');
 		$this->db->where('id_user', $id);
 		return $this->db->get()->row_array();
 		
@@ -102,6 +102,12 @@ class Model extends CI_Model
 		$this->db->where('id_masyarakat', $id);
 		return $this->db->get()->row_array();
 		
+	}
+
+	public function sendVote($id,$data)
+	{
+		$this->db->where('id_user', $id);
+		$this->db->update('table_masyarakat', $data);	
 	}
     
     

@@ -82,7 +82,9 @@
 												 <?php if ($status == false):?>
 													<a href="#" onclick="verifikasi();"> <i class="btn btn-primary fa fa-check-circle"> Pilih</i> </a>
 													<?php else: ?>
-												 <a href="#" onclick="input_pilihan();"> <i class="btn btn-primary fa fa-edit"> Pilih</i> </a>
+												 <?php if ($suara==null):?>
+													<a href="#" onclick="input_pilihan(<?=$value['id_paslon']?>);"> <i class="btn btn-primary fa fa-edit"> Pilih</i> </a>
+												 <?php endif;?>
 													<?php endif;?>
                                   </td>
                           </tr>
@@ -138,7 +140,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-				<button type="submit" class="btn btn-primary">Ya</button>
+				<button type="button" class="btn btn-primary" onclick="chose()">Ya</button>
 			</div></form>
 		</div>
 	</div>
@@ -156,6 +158,24 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Vote Berhasil di lakukan</h5>
+					
+			</div>
+			<div class="modal-body">
+				Suara Anda Berhasil di kirim ke sistem  !!!
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="refreshPage()">Close</button>
 			</div>
 		</div>
 	</div>
@@ -178,11 +198,31 @@ function visi(id){
 		}
 	});
 }
-</script>
-
-<script>
 function input_pilihan(id){
+	console.log(id);
   $("#id").val(id);
   $("#pilih").modal("show");
 }
+function chose() {
+	let data={
+		id:$("#id").val(),
+		id_user:"<?=$this->session->userdata('id_user');?>"
+	}
+	$.ajax({
+		type: "POST",
+		url: "<?=base_url()?>masyarakat/choseCandidate",
+		data: data,
+		dataType: "JSON",
+		success: function (response) {
+			console.log(response);
+			if (response.status=='success') {
+				$("#pilih").modal("hide");
+				$("#success").modal("show");
+			}
+		}
+	});
+	}
+	function refreshPage() { 
+		window.location.href="<?=base_url();?>masyarakat/input_pilihan";
+	 }
 </script>
