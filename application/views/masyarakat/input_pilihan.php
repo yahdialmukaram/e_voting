@@ -78,14 +78,14 @@
                           <br>
                          <a href="#" onclick="visi(<?=$value['id_paslon']?>);"> <i class="btn btn-danger fa fa-book"> Visi Misi</i> </a>
                          <br>
-												 <br>
-												 <?php if ($status == false):?>
-													<a href="#" onclick="verifikasi();"> <i class="btn btn-primary fa fa-check-circle"> Pilih</i> </a>
-													<?php else: ?>
-												 <?php if ($suara==null):?>
-													<a href="#" onclick="input_pilihan(<?=$value['id_paslon']?>);"> <i class="btn btn-primary fa fa-edit"> Pilih</i> </a>
-												 <?php endif;?>
-													<?php endif;?>
+							 <br>
+							 <?php if ($status == false):?>
+								<a href="#" onclick="verifikasi();"> <i class="btn btn-primary fa fa-check-circle"> Pilih</i> </a>
+								<?php else: ?>
+							 <?php if ($suara==null):?>
+								<a href="#" onclick="input_pilihan(<?=$value['id_paslon']?>);"> <i class="btn btn-primary fa fa-edit"> Pilih</i> </a>
+							 <?php endif;?>
+								<?php endif;?>
                                   </td>
                           </tr>
                           <?php endforeach; ?>

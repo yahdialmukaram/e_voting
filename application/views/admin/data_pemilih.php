@@ -97,7 +97,7 @@
 													<?php elseif ($value['status']==1):?>
 													<a href="#" class="label label-success" onclick="cancel_verifikasi(<?=$value['id_masyarakat']?>)"><i class="fa fa-check"></i> Terverifikasi</a>
 													<?php elseif ($value['status']==2):?>
-													<a href="#" class="label label-primary"><i class="fa fa-comment-o"></i> Telah Memilih</a>
+													<a href="#" class="label label-warning"><i class="fa fa-check"></i> Telah Memilih</a>
 													<?php endif;?>
 													</td>
                           <td><button type="button" class="label label-primary" onclick="show_photo('<?=$value['id_masyarakat']?>')"><i class= 'fa fa-check'> Klik foto</i> </button></td>
