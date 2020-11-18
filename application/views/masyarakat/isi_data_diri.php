@@ -91,6 +91,22 @@
 
 									<div class="clearfix"></div>
 								</div>
+								
+								<!-- alert simpan data -->
+								<?php if ($this->session->flashdata('success')):?>
+								<div id ="pesan" class="aler alert-success" role="alert">
+								<storng><?=$this->session->flashata('success');?></strong>
+								</div>
+								<?php endif?>
+								<!-- alet untuk hapus data -->
+								<?php if ($this->session->flashdata('error')):?>
+								<div id="pesan" class="alert alert-danger" role="alert">
+								<strong><?=$this->session->flashdata('error');?></strong>
+								</div>
+								<?php endif;?>
+
+
+
 								<div class="x_content">
 									<br />
 									<div id="" class="alert alert-warning alert-dismissible">
@@ -312,7 +328,16 @@
 			$('#save_data_diri').submit();
 		});
 	
+	 // pesan berwatu datatabel
+	 $('#example2').DataTable()
+    window.setTimeout(function(){
+    $("#pesan").fadeTo(1000,0).slideUp(500,function () { 
+    $(this).remove();
+    });
+  }, 6000);
+// tutup pesan
 	</script>
+	
 </body>
 
 </html>
