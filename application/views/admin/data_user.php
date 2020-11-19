@@ -69,6 +69,7 @@
                           <th style="width: 11%;">Edit Password</th>
                           <th>Nama</th>
                           <th>Email</th>
+                          <th>Waktu</th>
                           <th>Level</th>
                           <th>Opsi</th>
                           </th>
@@ -89,6 +90,7 @@
                           
                           <td><?=$value['nama'];?></td>
                           <td><?=$value['email'];?></td>
+                          <td><?=$value['waktu'];?></td>
                           <td><?=$value['level'];?></td>
                           <td><a href="#" onclick="hapus_admin(<?=$value['id_user']?>);" class="btn btn-danger btn-xs"> <i class="fa fa-trash"> Delete</i> </a></td>
                           </tr>

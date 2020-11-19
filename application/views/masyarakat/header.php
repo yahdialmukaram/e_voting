@@ -85,6 +85,7 @@
 
                   <li><a href="<?=base_url();?>masyarakat/home/"><i class="fa fa-dashboard"></i> Home <span class="fa fa-chevron"></span></a>
                   <li><a href="<?=base_url();?>masyarakat/input_pilihan/"><i class="fa fa-user"></i> Input Pilihan Anda</a>
+                  <li><a href="<?= base_url();?>c_login/logout"><i class="fa fa-sign-out"></i> Log Out</a></li>
                
                   </li>
         

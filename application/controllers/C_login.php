@@ -10,6 +10,7 @@ class C_login extends CI_Controller
         parent::__construct();
         $this->load->model('Model_login');
         $this->load->library('form_validation');
+        date_default_timezone_set('Asia/Jakarta');  
 
     }
 
@@ -76,6 +77,7 @@ class C_login extends CI_Controller
                 'password' =>hash('md5', $this->input->post('password')),
                 'nama' => $this->input->post('nama'),
                 'email' => $this->input->post('email'),
+                'waktu' => date('d-m-Y, H:i:s'),
                 'level' => 'masyarakat',
                 'status' => '2',
             ];

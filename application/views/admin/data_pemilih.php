@@ -41,11 +41,7 @@
                     </ul>
                     <div class="clearfix"></div>
                   </div>
-                  <!-- <button type="button" class="btn btn-primary fa fa-plus " data-toggle="modal"
-                    data-target="#exampleModal">
-                    Tambah User
-                  </button> -->
-                  <div class="x_content">
+                
 								  <!-- alert simpan data -->
                   <?php if ($this->session->flashdata('success')):?>
                   <div id="pesan" class="alert alert-success" role="alert">
@@ -54,11 +50,15 @@
                   <?php endif;?>
                   <!-- aler hapus data -->
                   <?php if ($this->session->flashdata('error')):?>
-                  <div id="pesan" class="alert alert-danger" role="alert">
-                    <strong><?=$this->session->flashdata('error');?></strong>
-                  </div>
-                  <?php endif; ?>
+                    <div id="pesan" class="alert alert-danger" role="alert">
+                      <strong><?=$this->session->flashdata('error');?></strong>
+                    </div>
+                    <?php endif; ?>
                     
+                    <button type="button" class="btn btn-warning btn-sm fa fa-print" data-toggle="modal" data-target="#modelId">
+                      Print Data DPT
+                    </button>
+                          <div class="x_content">
                     
                     <table id="datatable" class="table table-striped table-bordered">
                       <thead>

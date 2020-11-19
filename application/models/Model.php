@@ -108,7 +108,38 @@ class Model extends CI_Model
 	{
 		$this->db->where('id_user', $id);
 		$this->db->update('table_masyarakat', $data);	
-	}
+    }
+    
+    public function find_data_masyarakat()
+    {
+       $data_dpt = $this->db->get('table_masyarakat');
+       if ($data_dpt->num_rows() > 0) {
+           return $data_dpt->num_rows();
+       }else {
+           return 0;
+       }
+    }
+
+    public function find_data_paslon()
+    {
+        $data_paslon = $this->db->get('table_paslon');
+        if ($data_paslon->num_rows() > 0 ) {
+            return $data_paslon->num_rows();
+        }else {
+            return 0;
+        }
+    }
+
+    public function find_dpt_memilih()
+    {
+        $dpt_memilih = $this->db->get('table_masyarakat');
+        if ($dpt_memilih->num_rows() > 0) {
+            return $dpt_memilih->num_rows();
+        }else {
+            return 0;
+        }
+        
+    }
     
     
 

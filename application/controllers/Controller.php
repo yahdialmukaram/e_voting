@@ -23,8 +23,11 @@ public function __construct()
     public function index()
     {
         $judul ['title'] = 'halaman home';
+        $data['data_masyarakat'] = $this->model->find_data_masyarakat();
+        $data['data_paslon'] = $this->model->find_data_paslon();
+        $data['dpt_memilih'] = $this->model->find_dpt_memilih();
         $this->load->view('admin/header', $judul);
-        $this->load->view('admin/home');
+        $this->load->view('admin/home', $data);
         $this->load->view('admin/footer');
         
     }

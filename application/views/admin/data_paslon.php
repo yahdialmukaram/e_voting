@@ -48,6 +48,7 @@
                   <button type="button" class="btn btn-primary fa fa-plus" data-toggle="modal" data-target="#modelId">
                   Tambah Paslon
                 </button>
+                 
                   <div class="x_content">
                 
                     <table id="datatable" class="table table-striped table-bordered">
@@ -101,7 +102,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Input Paslon</h5>
+          <h4 class="modal-title">Input Paslon</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -110,22 +111,26 @@
           <form action="<?=base_url();?>controller/save_paslon/" method="POST" enctype="multipart/form-data">
           <div class="form-group" >
 						<label for="exampleInputEmail1">Nama Paslon</label>
-						<input type="text" name="nama_paslon" id="" required class="form-control" placeholder="Input nama paslon">						
+						<input type="text" name="nama_paslon" id="" required class="form-control" placeholder="Input nama paslon"> 
+            <small>  <font color="red">nama wajib isi</font></small>    
           </div>
           
           <div class="form-group">
 						<label for="exampleInputEmail1">Foto Paslon</label>
-						<input type="file" name="image_paslon" id="" required class="form-control">						
+            <input type="file" name="image_paslon" id="" required class="form-control">	
+            <small>  <font color="red">foto wajib isi</font></small>    					
           </div>
           
           <div class="form-group">
 						<label for="exampleInputEmail1">Nama Wakil</label>
-						<input type="text" name="nama_wakil" id="" required class="form-control" placeholder="Input wakil">						
+            <input type="text" name="nama_wakil" id="" required class="form-control" placeholder="Input wakil">		
+            <small>  <font color="red">nama wakil wajib isi</font></small>    				
           </div>
           
           <div class="form-group">
 						<label for="exampleInputEmail1">Foto Wakil</label>
-						<input type="file" name="image_wakil" id="" required class="form-control">						
+            <input type="file" name="image_wakil" id="" required class="form-control">		
+            <small>  <font color="red">foto wakil wajib isi</font></small>    				
           </div>
           
 
@@ -133,6 +138,7 @@
 						<label for="exampleInputEmail1">Visi Misi</label>
 						<textarea type="text" name="visi" id="" required class="form-control" cols="30"
             rows="7"> </textarea>						
+            <small>  <font color="red">visi misi wajib isi</font></small>    
 					</div>
           
         </div>
