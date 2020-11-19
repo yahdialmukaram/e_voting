@@ -86,9 +86,7 @@
                         </div>
 					  </div>   
   
-
                       <div class="ln_solid"></div>
-                    
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                           <a href="<?=base_url();?>masyarakat"class=" btn btn-primary fa fa-reply" > Back</a>

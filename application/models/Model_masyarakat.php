@@ -21,6 +21,18 @@ class Model_masyarakat extends CI_Model
 		return $this->db->get()->row_array();
 		
 	}
+
+	public function modelcheck($nik)
+	{
+		$this->db->select('nik');
+		$this->db->from('table_masyarakat');
+		$this->db->where('nik', $nik);
+		return $this->db->get()->num_rows();
+		
+		
+		
+		
+	}
 }
 
 /* End of file Model_masyarakat.php */

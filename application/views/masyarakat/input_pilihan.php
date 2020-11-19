@@ -151,11 +151,11 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Peringatan</h5>
+				<h5 class="modal-title btn">Peringatan</h5>
 			</div>
 			<div class="modal-body">
-				Maaf ada anda berlum terverfikasi, jadi anda tidak bisa memilih, mohon tunggu verifikasi !!!
-			</div>
+			<i class="btn btn-danger">Maaf data anda berlum terverfikasi, jadi anda tidak bisa memilih, mohon tunggu verifikasi
+			</div></i>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
 			</div>

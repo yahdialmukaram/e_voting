@@ -58,7 +58,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>E-Voting</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -69,7 +69,7 @@
                 <img src="<?= base_url();?>images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Welcome,</span>
+                <span>Welcome</span>
                 <h2><?= $this->session->userdata('nama');?></h2>
               </div>
             </div>
@@ -132,7 +132,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt=""><?= $this->session->userdata('nama')?>
+                    <img src="<?=base_url();?>images/img.jpg" alt=""><?= $this->session->userdata('nama')?>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">

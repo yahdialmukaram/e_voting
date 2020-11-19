@@ -70,8 +70,8 @@
                           <th>tempat lahir</th>
                           <th>tanggal lahir</th>
                           <th>jenis kelamin</th>
-                          <th>status</th>
                           <th>foto ktp (klik tombol)</th>
+                          <th>status</th>
                           <th>no hp</th>
                           <th>agama</th>
                           <th>status perkawinan</th>
@@ -91,6 +91,7 @@
                           <td><?=$value['tempat_lahir'];?></td>
                           <td><?=$value['tanggal_lahir'];?></td>
                           <td><?=$value['jenis_kelamin'];?></td>
+                          <td><button type="button" class="label label-primary" onclick="show_photo('<?=$value['id_masyarakat']?>')"><i class= 'fa fa-check'> Klik foto</i> </button></td>
 													<td>
 														<?php if ($value['status']==0):?>
 													<a href="#" class="label label-danger" onclick="verifikasi(<?=$value['id_masyarakat']?>);"><i class="fa fa-ban"></i> Belum Verifikasi</a>
@@ -100,7 +101,6 @@
 													<a href="#" class="label label-warning"><i class="fa fa-check"></i> Telah Memilih</a>
 													<?php endif;?>
 													</td>
-                          <td><button type="button" class="label label-primary" onclick="show_photo('<?=$value['id_masyarakat']?>')"><i class= 'fa fa-check'> Klik foto</i> </button></td>
                           <td><?=$value['no_hp'];?></td>
                           <td><?=$value['agama'];?></td>
                           <td><?=$value['status_perkawinan'];?></td>

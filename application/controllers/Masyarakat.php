@@ -29,8 +29,9 @@ class Masyarakat extends CI_Controller
     public function home()
     {
         $judul['title'] = 'Halaman Home';
+        $data['data_diri'] = $this->Model_masyarakat->data_diri($this->session->userdata('id_user'));
         $this->load->view('masyarakat/header', $judul);
-        $this->load->view('masyarakat/home');
+        $this->load->view('masyarakat/home', $data);
         $this->load->view('masyarakat/footer');
 
         // redirect('masyarakat');
@@ -65,14 +66,23 @@ class Masyarakat extends CI_Controller
     }
     public function save_data_diri()
     {
+        // $nik = $this->input->post('nik');
+        // $sql = $this->db->query("select nik from table_masyarakat where nik= '$nik'");
+        // $check_nik = $sql->num_rows();
+        // if ($check_nik > 0 ) {
+        //     $this->session->set_flashdata('error','Nik Yang Anda Masukan Sudah Terdaftar');
+        //     redirect('masyarakat');
+        // }
+        
         $nik = $this->input->post('nik');
-        $sql = $this->db->query("select nik from table_masyarakat where nik= '$nik'");
-        $check_nik = $sql->num_rows();
-        if ($check_nik > 0 ) {
+        $check_nik = $this->Model_masyarakat->modelcheck($nik);
+        if($check_nik > 0){   
             $this->session->set_flashdata('error','Nik Yang Anda Masukan Sudah Terdaftar');
             redirect('masyarakat');
+            
         }
-        
+
+
         $image = $this->upload('image');
         if ($image['status'] == 'success') {
             $data = [
