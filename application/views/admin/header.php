@@ -86,7 +86,7 @@
                   <li><a href="<?=base_url();?>controller/"><i class="fa fa-dashboard"></i> Home <span class="fa fa-chevron"></span></a>
                   <li><a href="<?=base_url();?>controller/data_user/"><i class="fa fa-user"></i> Data User </a>
                   <li><a href="<?=base_url();?>controller/data_paslon/"><i class="fa fa-user"></i> Input Data Paslon</a>
-                  <li><a href="<?=base_url();?>controller/data_pemilih/"><i class="fa fa-edit"></i> Data DPT Belum Memilih</a>
+                  <li><a href="<?=base_url();?>controller/data_pemilih/"><i class="fa fa-edit"></i> Data DPT</a>
                   <li><a href="<?=base_url();?>controller/data_selesai_memilih"><i class="fa fa-edit"></i> Data DPT Sudah Memilih</a>
                   <!-- <li><a href="<?=base_url();?>/"><i class="fa fa-user"></i> Data Pengguna <span class="fa fa-chevron"></span></a> -->
              

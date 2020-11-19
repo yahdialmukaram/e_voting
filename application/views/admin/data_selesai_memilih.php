@@ -53,10 +53,10 @@
                           <th style="width: 1%;">No</th>
                           <th style="width: 13%;">nik</th>
                           <th>nama</th>
-                          <th>alamat</th>
-                          <th style="width: 1%;">jenis kelamin</th>
+                          <th style="width: 25%;">alamat</th>
+                          <th style="width: 15%;">jenis kelamin</th>
                           <th style="width: 13%;">status</th>
-                          <th style="width: 10%;">opsi</th>
+                          <!-- <th style="width: 10%;">opsi</th> -->
                           </th>
                          
                         </tr>
@@ -75,10 +75,10 @@
                         <a href="#" class="label label-primary"><i class="fa fa-check"></i> Telah Memilih</a>                        
                         <?php endif;?>
                           </td>
-                      <td>
+                      <!-- <td>
                       <a href="<?php echo base_url(); ?>c_admin/edit_siswa/"
                           class="btn btn-danger btn-xs"> <i class="fa fa-trash"></i> Delete </a>
-                      </td>
+                      </td> -->
                           </tr>
                         <?php endforeach; ?>
                      
