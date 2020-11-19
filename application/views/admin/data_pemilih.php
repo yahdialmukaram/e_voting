@@ -64,7 +64,7 @@
                       <thead>
                         <tr>
                           <th style="width: 1%;">No</th>
-                          <th>nik</th>
+                          <th style="width: 13%;">nik</th>
                           <th>nama</th>
                           <th>alamat</th>
                           <th>tempat lahir</th>
