@@ -74,11 +74,10 @@
                           <th>no hp</th>
                           <th>agama</th>
                           <th>status perkawinan</th>
-                        
-                          </th>
-                         
                         </tr>
                       </thead>
+                      
+                      
                       <tbody>
                         <?php $no = 1; 
                         foreach ($pemilih as $key => $value):?>

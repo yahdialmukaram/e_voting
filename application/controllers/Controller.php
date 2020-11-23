@@ -92,8 +92,8 @@ public function __construct()
         }
         function ambildataid()
         {
-           $id_masyarakat = $this->input->post('id_masyarakat'); //Menangkap inputan no induk
-           $data = $this->model->getdataid($id_masyarakat); // Menampung value return dari fungsi getDataByNoinduk ke variabel data
+           $id_masyarakat = $this->input->post('id_masyarakat'); //Menangkap inputan id
+           $data = $this->model->getdataid($id_masyarakat); // Menampung value return dari fungsi get id ke variabel data
            echo json_encode($data); 
        }
 	}
