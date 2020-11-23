@@ -57,7 +57,7 @@
                <?php
                $no = 1;
                foreach ($pemilih as $key => $value):?>
-                  <tbody>
+                  <tbody>m
                   <tr>
                           <td><?=$no++?></td>
                           <td><?=$value['nik'];?></td>
@@ -67,15 +67,15 @@
                           <td><?=$value['tanggal_lahir'];?></td>
                           <td><?=$value['jenis_kelamin'];?></td>
                           <td><button type="button" class="label label-primary" onclick="show_photo('<?=$value['id_masyarakat']?>')"><i class= 'fa fa-check'> Klik foto</i> </button></td>
-						        	<td>
-						        		<?php if ($value['status']==0):?>
-						        	<a href="#" class="label label-danger" onclick="verifikasi(<?=$value['id_masyarakat']?>);"><i class="fa fa-ban"></i> Belum Verifikasi</a>
-						        	<?php elseif ($value['status']==1):?>
-						        	<a href="#" class="label label-success" onclick="cancel_verifikasi(<?=$value['id_masyarakat']?>)"><i class="fa fa-check"></i> Terverifikasi</a>
-						        	<?php elseif ($value['status']==2):?>
-						        	<a href="#" class="label label-warning"><i class="fa fa-check"></i> Telah Memilih</a>
-						        	<?php endif;?>
-						        	</td>
+						    	<td>
+						    		<?php if ($value['status']==0):?>
+						    	<a href="#" class="label label-danger" onclick="verifikasi(<?=$value['id_masyarakat']?>);"><i class="fa fa-ban"></i> Belum Verifikasi</a>
+						    	<?php elseif ($value['status']==1):?>
+						    	<a href="#" class="label label-success" onclick="cancel_verifikasi(<?=$value['id_masyarakat']?>)"><i class="fa fa-check"></i> Terverifikasi</a>
+						    	<?php elseif ($value['status']==2):?>
+						    	<a href="#" class="label label-warning"><i class="fa fa-check"></i> Telah Memilih</a>
+						    	<?php endif;?>
+						    	</td>
                           <td><?=$value['no_hp'];?></td>
                           <td><?=$value['agama'];?></td>
                           <td><?=$value['status_perkawinan'];?></td>
