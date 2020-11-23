@@ -54,10 +54,9 @@
                       <strong><?=$this->session->flashdata('error');?></strong>
                     </div>
                     <?php endif; ?>
-                    
-                    <button type="button" class="btn btn-warning btn-sm fa fa-print" data-toggle="modal" data-target="#modelId">
-                      Print Data DPT
-                    </button>
+
+                    <a href="<?=base_url();?>cetak/printdpt" class="btn btn-warning btn-sm fa fa-print"> Print Data DPT</a>
+
                           <div class="x_content">
                     
                     <table id="datatable" class="table table-striped table-bordered">
