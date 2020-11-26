@@ -64,6 +64,7 @@
                         </tr>
                       </thead>
                       <tbody>
+											<?php if ($statusData==true):?>
                         <?php $no = 1; 
                         foreach ($paslon as $key => $value):?>
                         <tr>
@@ -78,6 +79,7 @@
                         <td>            </td>             
                           
                           <td>
+													<label for="" class="label label-success"><?=$value['suara']?> Suara</label>
 										<a href="<?php echo base_url(); ?>controller/edit_paslon/<?=$value['id_paslon']?>" class="btn btn-info btn-xs"> <i class="fa fa-wrench"></i> Edit </a>
                     <br>
 										<a href="<?php echo base_url(); ?>controller/details_paslon/<?=$value['id_paslon'];?>"class="btn btn-warning btn-xs"> <i class="fa fa-search-plus"></i> Details</a>
@@ -88,6 +90,7 @@
               
                           </tr>
                           <?php endforeach; ?>
+												<?php endif; ?>
                         </tbody>
                     </table>
                   </div>

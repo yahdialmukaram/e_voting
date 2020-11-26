@@ -29,9 +29,9 @@ class Model extends CI_Model
     }
     public function get_paslon()
     {
-        $this->db->from('table_paslon');
+	$this->db->from('table_paslon');
         $this->db->order_by('id_paslon', 'desc');
-        return $this->db->get()->result_array();
+        return $this->db->get();
         
     }
     public function save_paslon($insert)
@@ -139,8 +139,29 @@ class Model extends CI_Model
             return 0;
         }
         
-    }
-    
+	}
+	public function hitung_suara($id)
+	{
+		$this->db->select('id_masyarakat');
+		$this->db->from('table_masyarakat');
+		$this->db->where('suara', $id);
+		return $this->db->get()->num_rows();
+
+	}
+    public function hitung_dpt($status)
+	{
+		$this->db->select('id_masyarakat');
+		$this->db->from('table_masyarakat');
+		if ($status=='belum') {
+			$this->db->where('suara', null);
+			
+		} else {
+			$this->db->where('suara !="null"');
+			
+		}
+		return $this->db->get()->num_rows();
+		
+	}
     
 
 }

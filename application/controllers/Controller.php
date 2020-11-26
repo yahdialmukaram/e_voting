@@ -25,19 +25,38 @@ public function __construct()
         $judul ['title'] = 'halaman home';
         $data['data_masyarakat'] = $this->model->find_data_masyarakat();
         $data['data_paslon'] = $this->model->find_data_paslon();
-        $data['dpt_memilih'] = $this->model->find_dpt_memilih();
+		$data['dpt_memilih'] = $this->model->hitung_dpt('sudah');
+		$data['dpt_belum_memilih'] = $this->model->hitung_dpt('belum');
         $this->load->view('admin/header', $judul);
         $this->load->view('admin/home', $data);
-        $this->load->view('admin/footer');
+		$this->load->view('admin/footer');
+		// print_r($data);
         
     }
     public function data_paslon()
     {
         $judul ['title'] = 'halaman paslon';
-        $data['paslon'] = $this->model->get_paslon();
+		$paslon= $this->model->get_paslon();
+		if ($paslon->num_rows()>0) {
+			$data['statusData']=true;
+			foreach ($paslon->result_array() as $key => $value) {
+				$result[]=[
+					'nama_paslon'=>$value['nama_paslon'],
+					'image_paslon'=>$value['image_paslon'],
+					'image_wakil'=>$value['image_wakil'],
+					'id_paslon'=>$value['id_paslon'],
+					'nama_wakil'=>$value['nama_wakil'],
+					'suara'=>$this->model->hitung_suara($value['id_paslon']),
+				];
+			}
+			$data['paslon']=$result;
+		} else {
+			$data['statusData']=false;
+		}
         $this->load->view('admin/header', $judul);
         $this->load->view('admin/data_paslon', $data);
-        $this->load->view('admin/footer');
+		$this->load->view('admin/footer');
+		// print_r($data);
         
     }
     public function data_user()
