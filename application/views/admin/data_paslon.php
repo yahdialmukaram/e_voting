@@ -76,10 +76,11 @@
                           <td style="text-align: center;"><?=$value['nama_wakil'];?><hr><img style="width: 250px;height: 250px;  "
                           src="<?=base_url();?>uploads/original_image/<?=$value['image_wakil'];?>">
                         </td>          
-                        <td>            </td>             
+                        <td>           
+													<label for="" class="label label-success"><?=$value['suara']?> Suara</label>
+                         </td>             
                           
                           <td>
-													<label for="" class="label label-success"><?=$value['suara']?> Suara</label>
 										<a href="<?php echo base_url(); ?>controller/edit_paslon/<?=$value['id_paslon']?>" class="btn btn-info btn-xs"> <i class="fa fa-wrench"></i> Edit </a>
                     <br>
 										<a href="<?php echo base_url(); ?>controller/details_paslon/<?=$value['id_paslon'];?>"class="btn btn-warning btn-xs"> <i class="fa fa-search-plus"></i> Details</a>

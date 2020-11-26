@@ -121,7 +121,7 @@ class Masyarakat extends CI_Controller
     public function input_pilihan()
     {
         $judul['title'] = 'Input pilihan';
-        $data['paslon'] = $this->model->get_paslon();
+        $data['paslon'] = $this->model->get_paslon()->result_array();
 		$check= $this->model->status_masyarakat($this->session->userdata('id_user'));
 		$data['status']=$check['status'];
 		$data['suara']=$check['suara'];
