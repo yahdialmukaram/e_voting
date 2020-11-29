@@ -55,7 +55,7 @@
                     </div>
                     <?php endif; ?>
 
-                    <a href="<?=base_url();?>cetak/printdpt" class="btn btn-warning btn-sm fa fa-print"> Print Data DPT</a>
+                    <a href="<?=base_url();?>cetak/printdpt" target="_blank" class="btn btn-warning btn-sm fa fa-print"> Print Data DPT</a>
 
                           <div class="x_content">
                     

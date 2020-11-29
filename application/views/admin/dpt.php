@@ -57,7 +57,7 @@
                <?php
                $no = 1;
                foreach ($pemilih as $key => $value):?>
-                  <tbody>m
+                  <tbody>
                   <tr>
                           <td><?=$no++?></td>
                           <td><?=$value['nik'];?></td>
