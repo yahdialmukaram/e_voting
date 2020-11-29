@@ -14,9 +14,20 @@ class C_login extends CI_Controller
 
     }
 
+    
+    // public function welcome()
+    // {
+    //     $this->load->view('admin/welcome');
+        
+    // }
     public function index()
     {
-        $this->load->view('admin/login');
+        $this->load->view('admin/welcome');
+    }
+    public function login_user()
+    {
+        $judul['title']='Halaman Login';
+        $this->load->view('admin/login', $judul);
     }
     public function aksi_login()
     {
