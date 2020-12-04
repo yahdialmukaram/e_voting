@@ -97,7 +97,8 @@ class Masyarakat extends CI_Controller
                 'id_user' => $this->session->userdata('id_user'),
                 'status_perkawinan' => $this->input->post('status_perkawinan'),
                 'foto_ktp' => $image['data'],
-                'status' => false,
+				'status' => false,
+				'suara'=>null,
             
             ];
             $this->Model_masyarakat->save_data_diri($data);

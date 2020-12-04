@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 16, 2020 at 01:58 PM
+-- Generation Time: Dec 04, 2020 at 04:17 PM
 -- Server version: 5.7.24
--- PHP Version: 7.2.19
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,7 +42,7 @@ CREATE TABLE `table_masyarakat` (
   `foto_ktp` varchar(255) NOT NULL,
   `status_perkawinan` varchar(255) NOT NULL,
   `status` varchar(50) NOT NULL,
-  `suara` varchar(255) NOT NULL
+  `suara` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -50,12 +50,12 @@ CREATE TABLE `table_masyarakat` (
 --
 
 INSERT INTO `table_masyarakat` (`id_masyarakat`, `id_user`, `nik`, `nama`, `alamat`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `no_hp`, `agama`, `foto_ktp`, `status_perkawinan`, `status`, `suara`) VALUES
-(11, 44, '1771070307960001', 'xaxa', 'xaxa', 'padang', '1996-07-03', 'Laki Laki', '0982273673', 'Islam', '', 'Sudah Menikah', '1', ''),
-(12, 38, '1771070307960005', 'jala', 'padang', 'padang', '14.10.2020', 'Laki Laki', '082169074845', 'Islam', '', 'Sudah Menikah', '1', ''),
-(15, 45, '1771070307960005', 'caca', 'caca', 'padang', '13.10.2020', 'Laki Laki', '082169074845', 'Islam', '53296e7f4128ac458d0d18ab1659c86b.jpg', 'Belum Menikah', '0', ''),
-(16, 48, '1771070307960001', 'yahdi almukaram', 'rere', 'padang', '1996-07-03', 'Perempuan', '0982273673', 'Kristen', 'a027375533fbe40226c9b376472953e4.jpg', 'Belum Menikah', '0', ''),
-(24, 51, '1771070307960005', 'sasabila', 'sasa', 'baba', '16.10.2020', 'Laki Laki', '082169074845', 'Islam', 'a1447963ff2e8f6623fad9dbfe55d389.PNG', 'Sudah Menikah', '1', ''),
-(25, 57, '1771070307960001', 'dada', 'dada', 'padang', '1996-07-03', 'Laki Laki', '082169074845', 'Islam', 'a1ad89143d644795317b87cfa5ea33e9.jpg', 'Sudah Menikah', '0', '');
+(11, 44, '1771070307960001', 'xaxa', 'xaxa', 'padang', '1996-07-03', 'Laki Laki', '0982273673', 'Islam', '', 'Sudah Menikah', '0', NULL),
+(12, 38, '1771070307960005', 'jala', 'padang', 'padang', '14.10.2020', 'Laki Laki', '082169074845', 'Islam', '', 'Sudah Menikah', '0', NULL),
+(15, 45, '1771070307960005', 'caca', 'caca', 'padang', '13.10.2020', 'Laki Laki', '082169074845', 'Islam', '53296e7f4128ac458d0d18ab1659c86b.jpg', 'Belum Menikah', '0', NULL),
+(16, 48, '1771070307960001', 'yahdi almukaram', 'rere', 'padang', '1996-07-03', 'Perempuan', '0982273673', 'Kristen', 'a027375533fbe40226c9b376472953e4.jpg', 'Belum Menikah', '0', NULL),
+(24, 51, '1771070307960005', 'sasabila', 'sasa', 'baba', '16.10.2020', 'Laki Laki', '082169074845', 'Islam', 'a1447963ff2e8f6623fad9dbfe55d389.PNG', 'Sudah Menikah', '0', NULL),
+(25, 57, '1771070307960001', 'dada', 'dada', 'padang', '1996-07-03', 'Laki Laki', '082169074845', 'Islam', 'a1ad89143d644795317b87cfa5ea33e9.jpg', 'Sudah Menikah', '0', NULL);
 
 -- --------------------------------------------------------
 
