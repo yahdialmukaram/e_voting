@@ -129,9 +129,9 @@
 		<div class="container">
 			<h2 class="nino-sectionHeading">
 				<span class="nino-subHeading">Visi</span>
-				NAGARI TABEK
+				NAGARI GUGUAK MALALO
 			</h2>
-			<p class="nino-sectionDesc">Tewujudnya Nagari Tabek yang Agamais, Berbudaya dan Beradab dalam Kehidupan yang Aman Serta Sejahtera</p>
+			<p class="nino-sectionDesc">Tewujudnya Nagari guguak malalo yang Agamais, Berbudaya dan Beradab dalam Kehidupan yang Aman Serta Sejahtera</p>
 			<!-- <div class="sectionContent">
 				<div class="row nino-hoverEffect">
 					<div class="col-md-4 col-sm-4">
@@ -207,7 +207,7 @@
     	<div class="container">
     		<h2 class="nino-sectionHeading">
 				<span class="nino-subHeading">Misi</span>
-				Nagari Tabek
+				NAGARI GUGUAK MALALO
 			</h2>
 			<div class="sectionContent">			
 				<div class="fw" layout="row">

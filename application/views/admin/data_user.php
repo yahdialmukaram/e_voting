@@ -120,25 +120,28 @@
             <label class="control-label col-md-12 col-sm-3 col-xs-12">Username</label>
             <div class="col-md-12 col-sm-12 col-xs-12">
               <input type="text" name="username" class="form-control"required placeholder="masukan username" >
+              <small>  <font color="red">username wajib isi</font></small>    
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-md-12 col-sm-3 col-xs-12">Password</label>
             <div class="col-md-12 col-sm-12 col-xs-12">
               <input type="password" name="password" class="form-control"required placeholder="masukan password" >
+              <small>  <font color="red">password wajib isi</font></small>    
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-md-12 col-sm-3 col-xs-12">Nama</label>
             <div class="col-md-12 col-sm-12 col-xs-12">
               <input type="text" name="nama" class="form-control"required placeholder="masukan nama" >
+              <small>  <font color="red">nama wajib isi</font></small>    
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-md-12 col-sm-3 col-xs-12">Email</label>
             <div class="col-md-12 col-sm-12 col-xs-12">
-              <input type="email" name="email" class="form-control"required placeholder="masukan email" aria-describedby="helpId" >
-              <small id="helpId" class="text-muted-red" >Email</small>
+              <input type="email" name="email" class="form-control"required placeholder="masukan email">
+              <small>  <font color="red">email wajib isi</font></small>    
             </div>
           </div>
 

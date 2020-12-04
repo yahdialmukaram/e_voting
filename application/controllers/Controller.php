@@ -75,6 +75,7 @@ public function __construct()
             'password'=> md5($this->input->post('password')),
             'nama'=> $this->input->post('nama'),
             'email'=> $this->input->post('email'),
+            'waktu' => date('d-m-Y, H:i:s'),
             'level'=> $this->input->post('level'),  
         ];
         $this->model->add_admin($data);

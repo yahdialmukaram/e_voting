@@ -47,7 +47,14 @@
 
             
                   <div class="x_content">
-                
+				  <div id="" class="alert alert-warning alert-dismissible">
+										<button type="button" class="close" data-dismiss="alert"
+											aria-hidden="true">&times;</button>
+									<h4><i class="icon fa fa-warning"></i> Peringatan !</h4>
+									<marquee><h4>Masukan Sura Anda, Anda hanya dapat memilh satu kali. Terimkasih atas partisipasinya </h4>	</marquee>
+									</div> 
+				  </div>
+					
                     <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                         <tr>

@@ -22,6 +22,7 @@ class C_login extends CI_Controller
     // }
     public function index()
     {
+        $paslon= $this->model->get_paslon();
         $this->load->view('admin/welcome');
     }
     public function login_user()
@@ -43,7 +44,7 @@ class C_login extends CI_Controller
         if ($cek_username->num_rows() == '0') { //jika username di hitung sama dengan 0
             //beri aler dengan flashdata
             $this->session->set_flashdata('error', 'maaf username dan password salah');
-            redirect('c_login');
+            redirect('c_login/login_user');
 
             //jika ada buat sesi login
         } else {
@@ -95,7 +96,7 @@ class C_login extends CI_Controller
 
             $this->Model_login->registrasi_user($data);
             $this->session->set_flashdata('success', 'Proses Pendaftaran User Berhasil');
-            redirect('c_login');
+            redirect('c_login/login_user');
         } else {
             $this->session->set_flashdata('error', 'tidak terdftar');
             redirect('c_login');
