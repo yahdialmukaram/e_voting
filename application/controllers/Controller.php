@@ -243,8 +243,8 @@ public function __construct()
            $this->model->update_paslon($id,$data);
            print_r($data);
         
-        // $this->session->set_flashdata('success','Data berhasil di ubah');
-        // redirect('controller/data_paslon');
+        $this->session->set_flashdata('success','Data berhasil di ubah');
+        redirect('controller/data_paslon');
 	}
 	public function photo_check()
 	{
