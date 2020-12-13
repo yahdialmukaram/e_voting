@@ -15,7 +15,7 @@
                   <div class="x_content">
                     <br />
                  
-                    <form action="<?=base_url();?>controller/update_paslon/<?=$edit['id_paslon']?>" method="post" data-parsley-validate class="form-horizontal form-label-left">
+                    <form action="<?=base_url();?>controller/update_paslon/<?=$edit['id_paslon']?>" method="post" data-parsley-validate class="form-horizontal form-label-left" enctype="multipart/form-data">
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nama Palon
                         </label>

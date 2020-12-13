@@ -225,7 +225,7 @@ public function __construct()
     {
         $image = $this->upload('image_paslon');
         $image1 = $this->upload('image_wakil');
-        if ($image['status'] == 'success') {
+        if ($image['status'] == 'success'  and $image1=='success') {
             $data =[
                 'nama_paslon'  =>$this->input->post('nama_paslon'),
                 'image_paslon' =>$image['data'],
@@ -233,7 +233,22 @@ public function __construct()
                 'image_wakil'  =>$image1['data'],
                 'visi'  =>$this->input->post('visi'),
                 ];
-            }else {
+            } elseif ($image['status']=='success') {
+				$data =[
+					'nama_paslon'  =>$this->input->post('nama_paslon'),
+					'image_paslon' =>$image['data'],
+					'nama_wakil'   =>$this->input->post('nama_wakil'),
+					'visi'  =>$this->input->post('visi'),
+					];
+			} 
+			elseif ($image1['status']=='success') {
+				$data =[
+					'nama_paslon'  =>$this->input->post('nama_paslon'),
+					'image_wakil'  =>$image1['data'],
+					'nama_wakil'   =>$this->input->post('nama_wakil'),
+					'visi'  =>$this->input->post('visi'),
+					];
+			} else {
                 $data =[
                     'nama_paslon'  =>$this->input->post('nama_paslon'),
                     'nama_wakil' =>$this->input->post('nama_wakil'),
@@ -241,7 +256,6 @@ public function __construct()
                     ];
            }
            $this->model->update_paslon($id,$data);
-           print_r($data);
         
         $this->session->set_flashdata('success','Data berhasil di ubah');
         redirect('controller/data_paslon');
