@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 04, 2020 at 04:17 PM
+-- Generation Time: Dec 04, 2020 at 07:00 PM
 -- Server version: 5.7.24
--- PHP Version: 7.3.9
+-- PHP Version: 7.2.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -45,18 +45,6 @@ CREATE TABLE `table_masyarakat` (
   `suara` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `table_masyarakat`
---
-
-INSERT INTO `table_masyarakat` (`id_masyarakat`, `id_user`, `nik`, `nama`, `alamat`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `no_hp`, `agama`, `foto_ktp`, `status_perkawinan`, `status`, `suara`) VALUES
-(11, 44, '1771070307960001', 'xaxa', 'xaxa', 'padang', '1996-07-03', 'Laki Laki', '0982273673', 'Islam', '', 'Sudah Menikah', '0', NULL),
-(12, 38, '1771070307960005', 'jala', 'padang', 'padang', '14.10.2020', 'Laki Laki', '082169074845', 'Islam', '', 'Sudah Menikah', '0', NULL),
-(15, 45, '1771070307960005', 'caca', 'caca', 'padang', '13.10.2020', 'Laki Laki', '082169074845', 'Islam', '53296e7f4128ac458d0d18ab1659c86b.jpg', 'Belum Menikah', '0', NULL),
-(16, 48, '1771070307960001', 'yahdi almukaram', 'rere', 'padang', '1996-07-03', 'Perempuan', '0982273673', 'Kristen', 'a027375533fbe40226c9b376472953e4.jpg', 'Belum Menikah', '0', NULL),
-(24, 51, '1771070307960005', 'sasabila', 'sasa', 'baba', '16.10.2020', 'Laki Laki', '082169074845', 'Islam', 'a1447963ff2e8f6623fad9dbfe55d389.PNG', 'Sudah Menikah', '0', NULL),
-(25, 57, '1771070307960001', 'dada', 'dada', 'padang', '1996-07-03', 'Laki Laki', '082169074845', 'Islam', 'a1ad89143d644795317b87cfa5ea33e9.jpg', 'Sudah Menikah', '0', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -77,7 +65,6 @@ CREATE TABLE `table_paslon` (
 --
 
 INSERT INTO `table_paslon` (`id_paslon`, `nama_paslon`, `nama_wakil`, `image_paslon`, `image_wakil`, `visi`) VALUES
-(2, 'A', 'B', 'ccf7f34028403d0ad279359461240229.PNG', 'afb87f6f59831ff69181485514d8c0ff.jpg', ''),
 (3, 'yaya hama', 'sasa dada', '2ce12aef175a4d335c2476129c2b3b7b.PNG', '3b5b686b2867072df2e20e5ac842001a.jpg', 'yahdi'),
 (6, 'caca', 'acaa', '6dcb746aee9af615efb10f22ee774488.jpg', 'a15436e0c86dcabf4afbbda929ead71e.jpg', ' misi ini adalah perang semata adalah misi ini adalah peran  misi ini adalah perang semata adalahmisi ini adalah perang semata adalahmisi ini adalah perang semata adalah misi ini adalah perang semata adalahg semata adalah misi ini adalah perang semata adalah  misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah misi ini adalah perang semata adalah');
 
@@ -93,6 +80,7 @@ CREATE TABLE `table_user` (
   `password` varchar(50) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `waktu` varchar(255) NOT NULL,
   `level` varchar(11) NOT NULL,
   `status` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -101,11 +89,9 @@ CREATE TABLE `table_user` (
 -- Dumping data for table `table_user`
 --
 
-INSERT INTO `table_user` (`id_user`, `username`, `password`, `nama`, `email`, `level`, `status`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'yahdi', 'yahdi@gmail.com', 'admin', '0'),
-(2, 'yahdi', '58d432c74ad12fc7d0f30300771bec18', 'almukaram', 'yahd@gmail.com', 'admin', '0'),
-(51, 'sasa', 'f45731e3d39a1b2330bbf93e9b3de59e', 'saa', 'yahdialmukaram03@gmail.com', 'masyarakat', '2'),
-(57, 'dada', 'b01abf84324066bdb4eed4d5bf20f887', 'dada', 'yahdialmukaram03@gmail.com', 'masyarakat', '2');
+INSERT INTO `table_user` (`id_user`, `username`, `password`, `nama`, `email`, `waktu`, `level`, `status`) VALUES
+(60, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'yahdialmukaram03@gmail.com', '05-12-2020, 01:56:49', 'admin', ''),
+(61, 'yahdi', '58d432c74ad12fc7d0f30300771bec18', 'yahdi', 'yahdialmukaram03@gmail.com', '05-12-2020, 01:57:31', 'admin', '');
 
 --
 -- Indexes for dumped tables
@@ -137,19 +123,19 @@ ALTER TABLE `table_user`
 -- AUTO_INCREMENT for table `table_masyarakat`
 --
 ALTER TABLE `table_masyarakat`
-  MODIFY `id_masyarakat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_masyarakat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `table_paslon`
 --
 ALTER TABLE `table_paslon`
-  MODIFY `id_paslon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_paslon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `table_user`
 --
 ALTER TABLE `table_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
