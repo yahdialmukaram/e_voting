@@ -130,16 +130,21 @@ class Model extends CI_Model
         }
     }
 
-    // public function find_dpt_memilih()
+    // perintah mencari data
+    //   public function find_data($table, $id_table, $id)
     // {
-    //     $dpt_memilih = $this->db->get('table_masyarakat');
-    //     if ($dpt_memilih->num_rows() > 0) {
-    //         return $dpt_memilih->num_rows();
-    //     }else {
-    //         return 0;
-    //     }
-        
-	// }
+    //     $this->db->where($id_table, $id);
+    //     return $this->db->get($table);
+
+    // }
+    // perintah mencari data
+      public function find_data($table, $id_table, $id)
+    {
+        $this->db->where('jenis_kelamin',$id);
+        return $this->db->get('table_masyarakat');
+
+    }
+
 	public function hitung_suara($id)
 	{
 		$this->db->select('id_masyarakat');

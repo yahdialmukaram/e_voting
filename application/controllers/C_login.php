@@ -22,8 +22,14 @@ class C_login extends CI_Controller
     // }
     public function index()
     {
+        $data['data_masyarakat'] = $this->model->find_data_masyarakat();
+        $data['data_paslon'] = $this->model->find_data_paslon();
+        $data['data_laki'] = $this->model->find_data('table_masyarakat','jenis_kelamin','Laki Laki')->num_rows();
+        $data['data_perempuan'] = $this->model->find_data('table_masyarakat','jenis_kelamin','Perempuan')->num_rows();
+		$data['dpt_memilih'] = $this->model->hitung_dpt('sudah');
+		$data['dpt_belum_memilih'] = $this->model->hitung_dpt('belum');
         $paslon= $this->model->get_paslon();
-        $this->load->view('admin/welcome');
+        $this->load->view('admin/welcome', $data);
     }
     public function login_user()
     {

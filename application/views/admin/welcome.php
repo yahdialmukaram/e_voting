@@ -178,23 +178,28 @@
     	<div class="container">
     		<div layout="row" class="verticalStretch">
     			<div class="item">
-    				<div class="number">13</div>
+    				<div class="number"><?=$data_masyarakat?></div>
     				<div class="text">Total Penduduk</div>
     			</div><div class="item">
-    				<div class="number">8</div>
-    				<div class="text">Laki Laki</div>
+    				<div class="number"><?=$data_paslon?></div>
+    				<div class="text">Calon Kandidat</div>
     			</div>
+    	
     			<div class="item">
-    				<div class="number">3</div>
-    				<div class="text">Perempuan</div>
-    			</div>
-    			<div class="item">
-    				<div class="number">6</div>
+    				<div class="number"><?=$dpt_memilih?></div>
     				<div class="text">Telah Memilih</div>
     			</div>
     			<div class="item">
-    				<div class="number">5</div>
+    				<div class="number"><?=$dpt_belum_memilih?></div>
     				<div class="text">Belum Memilih</div>
+    			</div>
+    			<div class="item">
+    				<div class="number"><?=$data_laki?></div>
+    				<div class="text">Laki Laki</div>
+    			</div>
+				<div class="item">
+    				<div class="number"><?=$data_perempuan?></div>
+    				<div class="text">Perempuan</div>
     			</div>
     			
     		</div>
