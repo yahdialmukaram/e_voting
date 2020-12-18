@@ -27,6 +27,9 @@ class Model extends CI_Model
         $this->db->from('table_masyarakat');
         $this->db->order_by('id_masyarakat', 'desc');
         $this->db->where(['status'=>1]);
+        $this->db->where('suara !="null"');
+			
+			
         // $this->db->where(['suara'=>6]);
         return $this->db->get()->result_array();
     }
