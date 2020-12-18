@@ -6,7 +6,7 @@
 <?php 
         $hari=array("Minggu","Senin","Selasa","Rabu","Kamis","Ju'mat","Sabtu");
         $bulan=array(1=>"Januari","Febuari","Maret","April","Mei","Juni","Juli","Agustus",
-                  "September","Oktober","September","November","Desember");
+                  "September","Oktober","November","Desember");
         $tgl=date("d");
         $bln=date("n");
         $hr=date("w");

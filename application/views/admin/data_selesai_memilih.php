@@ -41,6 +41,7 @@
                     </ul>
                     <div class="clearfix"></div>
                   </div>
+                  <a href="<?=base_url();?>cetak/printdpt_memilih" target="_blank" class="btn btn-warning btn-sm fa fa-print"> Print DPT Telah Memilih</a>
                   <!-- <button type="button" class="btn btn-primary fa fa-plus " data-toggle="modal"
                     data-target="#exampleModal">
                     Tambah User
@@ -56,7 +57,6 @@
                           <th style="width: 25%;">alamat</th>
                           <th style="width: 15%;">jenis kelamin</th>
                           <th style="width: 13%;">status</th>
-                          <!-- <th style="width: 10%;">opsi</th> -->
                           </th>
                          
                         </tr>
