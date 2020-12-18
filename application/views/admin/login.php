@@ -60,8 +60,8 @@
               <div class="clearfix"></div>
 
               <div class="separator">
-                <p class="change_link">New to site?
-                  <a href="#signup" class="to_register"> Buat Account </a>
+                <!-- <p class="change_link">New to site? -->
+                  <a href="#signup" class="to_register">Registrasi / Buat Account </a>
                 </p>
 
                 <div class="clearfix"></div>

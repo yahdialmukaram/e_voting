@@ -56,6 +56,7 @@
 								<!-- <li><a href="#nino-ourTeam">Our Team</a></li>
 								<li><a href="#nino-portfolio">Work</a></li>
 								<li><a href="#nino-latestBlog">Blog</a></li> -->
+
 							</ul>
 						</div>
 					</div>
@@ -71,9 +72,17 @@
 							<span class="nino-subHeading">E VOTING</span>
 							NAGARI GUGUAK MALALO
 						</h2>
-						<a href="http://localhost/e_voting/c_login/login_user" class="nino-btn">Login</a>
+						<!-- <a href="http://localhost/e_voting/c_login/login_user" class="nino-btn">Login</a> -->
+						<a href="<?=base_url()?>c_login/login_user" class="nino-btn">Login</a>
 					</div>
-					<div class="item">
+					<!-- <div class="item">
+						<h2 class="nino-sectionHeading">
+							<span class="nino-subHeading">E VOTING</span>
+							NAGARI GUGUAK MALALO
+						</h2>
+						<a href="http://localhost/e_voting/c_login/login_user" class="nino-btn">Login</a>
+					</div> -->
+					<!-- <div class="item">
 						<h2 class="nino-sectionHeading">
 							<span class="nino-subHeading">E VOTING</span>
 							NAGARI GUGUAK MALALO
@@ -86,14 +95,7 @@
 							NAGARI GUGUAK MALALO
 						</h2>
 						<a href="http://localhost/e_voting/c_login/login_user" class="nino-btn">Login</a>
-					</div>
-					<div class="item">
-						<h2 class="nino-sectionHeading">
-							<span class="nino-subHeading">E VOTING</span>
-							NAGARI GUGUAK MALALO
-						</h2>
-						<a href="http://localhost/e_voting/c_login/login_user" class="nino-btn">Login</a>
-					</div>
+					</div> -->
 				</div>
 
 				<!-- Indicators -->

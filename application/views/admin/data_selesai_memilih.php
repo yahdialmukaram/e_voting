@@ -71,14 +71,16 @@
                           <td><?=$value['alamat'];?></td>
                           <td><?=$value['jenis_kelamin'];?></td>
                           <td>
-                          <?php if ($value['status']== 1 ) :?>
-                        <a href="#" class="label label-primary"><i class="fa fa-check"></i> Telah Memilih</a>                        
-                        <?php endif;?>
-                          </td>
-                      <!-- <td>
-                      <a href="<?php echo base_url(); ?>c_admin/edit_siswa/"
-                          class="btn btn-danger btn-xs"> <i class="fa fa-trash"></i> Delete </a>
-                      </td> -->
+													<?php if ($value['suara']==null):?>
+														<?php if ($value['status']==0):?>
+													
+													<?php elseif ($value['status']==2):?>
+													<a href="#" class="label label-success"><i class="fa fa-check"></i> Telah Memilih</a>
+													<?php endif;?>
+													<?php else: ?>
+													<a href="#" class="label label-success"><i class="fa fa-check"></i> Telah Memilih</a>
+													<?php endif; ?>
+													</td>
                           </tr>
                         <?php endforeach; ?>
                      
@@ -93,30 +95,7 @@
         </div>
 
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-	aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Tambah Paslon</h5>
-			</div>
-			<div class="modal-body">
-
-				<form action="<?=base_url();?>masyarakat/save_usulan" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-						<label for="exampleInputEmail1">Silahkan Masukan Usulan Pembangunan Anda</label>
-            <textarea name="usulan" id="usulan" class="form-control" cols=40" rows="12"></textarea>
-					</div>
-          </div>
-          
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="submit" class="btn btn-primary">Save</button>
-			</div>
-			</form>
-		</div>
-  </div>
-         </div>
+   
 
 
          

@@ -45,7 +45,7 @@
                   </div>
                   <?php endif; ?>
 
-                  <button type="button" class="btn btn-primary fa fa-plus" data-toggle="modal" data-target="#modelId">
+                  <button type="button" class="btn btn-primary fa fa-plus" data-toggle="modal" data-target="#tambahPaslon">
                   Tambah Paslon
                 </button>
                  
@@ -102,7 +102,7 @@
         </div>
 
   <!-- Modal -->
-  <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div class="modal fade" id="tambahPaslon" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">

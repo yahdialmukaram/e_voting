@@ -26,7 +26,9 @@ public function __construct()
         $data['data_masyarakat'] = $this->model->find_data_masyarakat();
         $data['data_paslon'] = $this->model->find_data_paslon();
 		$data['dpt_memilih'] = $this->model->hitung_dpt('sudah');
-		$data['dpt_belum_memilih'] = $this->model->hitung_dpt('belum');
+        $data['dpt_belum_memilih'] = $this->model->hitung_dpt('belum');
+        $data['data_laki'] = $this->model->find_data('table_masyarakat','jenis_kalamin','Laki Laki')->num_rows();
+        $data['data_perempuan'] = $this->model->find_data('table_masyarakat','jenis_kalamin','Perempuan')->num_rows();
         $this->load->view('admin/header', $judul);
         $this->load->view('admin/home', $data);
 		$this->load->view('admin/footer');

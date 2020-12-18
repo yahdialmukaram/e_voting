@@ -23,8 +23,11 @@ class Model extends CI_Model
     }
     public function get_selesai_memilih()
     {
+        // $this->db->select('*');        
         $this->db->from('table_masyarakat');
         $this->db->order_by('id_masyarakat', 'desc');
+        $this->db->where(['status'=>1]);
+        // $this->db->where(['suara'=>6]);
         return $this->db->get()->result_array();
     }
     public function get_paslon()
@@ -142,6 +145,7 @@ class Model extends CI_Model
     {
         $this->db->where('jenis_kelamin',$id);
         return $this->db->get('table_masyarakat');
+        // print_r($table);
 
     }
 

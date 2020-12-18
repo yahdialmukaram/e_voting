@@ -75,11 +75,21 @@
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-check-square-o"></i></div>
                   <div class="count"><?=$dpt_belum_memilih?></div>
-                  <h3>DPT Belum Memilih</h3>
-
-
-                  
-                
+                  <h3>DPT Belum Memilih</h3>                
+                </div>
+              </div>
+              <div class="animated flipInY col-lg-6 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats">
+                  <div class="icon"><i class="glyphicon glyphicon-user"></i></div>
+                  <div class="count"><?=$data_laki?></div>
+                  <h3>Laki Laki</h3>                
+                </div>
+              </div>
+              <div class="animated flipInY col-lg-6 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats">
+                  <div class="icon"><i class="glyphicon glyphicon-user"></i></div>
+                  <div class="count"><?=$data_perempuan?></div>
+                  <h3>Perempuan</h3>                
                 </div>
               </div>
             </div>
