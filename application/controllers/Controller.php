@@ -34,7 +34,16 @@ public function __construct()
 		$this->load->view('admin/footer');
 		// print_r($data);
         
-    }
+	}
+	public function diagram(Type $var = null)
+	{
+		
+		$data['dpt_memilih'] = $this->model->hitung_dpt('sudah');
+		$data['dpt_belum_memilih'] = $this->model->hitung_dpt('belum');
+		$data['data_laki'] = $this->model->find_data('table_masyarakat','jenis_kalamin','Laki Laki')->num_rows();
+		$response=[$data['dpt_memilih'],$data['dpt_belum_memilih'],$data['data_laki']];
+		echo json_encode($response);
+	}
     public function data_paslon()
     {
         $judul ['title'] = 'halaman paslon';

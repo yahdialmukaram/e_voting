@@ -119,7 +119,8 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <canvas id="pieChart"></canvas>
+									
+<canvas id="myChart" width="40%" height="40%" ></canvas>
                   </div>
                 </div>
               </div>
