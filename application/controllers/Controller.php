@@ -11,12 +11,12 @@ public function __construct()
     date_default_timezone_set('Asia/Jakarta');
     
     //ini pnting untuk ke amanan login
-        // if ($this->session->userdata('level') !== 'admin' or 
-        //     $this->session->userdata('logged_in') !== true
-        //     ) {
-        // $this->session->set_flashdata('error', 'Anda tidak punya akses untuk menu admin');
-        // redirect('c_login');
-        // }
+        if ($this->session->userdata('level') !== 'admin' or 
+            $this->session->userdata('logged_in') !== true
+            ) {
+        $this->session->set_flashdata('error', 'Anda tidak punya akses untuk menu admin');
+        redirect('c_login');
+        }
     
 }
 
