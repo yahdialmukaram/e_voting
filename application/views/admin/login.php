@@ -24,6 +24,7 @@
   </head>
 
   <body class="login">
+    <img src="<?=base_url();?>images/img.jpg" id="bg" alt="" style="position:fixed; top:0; left:0; min-width:100%; min-height:100%;">
     <div>
       <a class="hiddenanchor" id="signup"></a>
       <a class="hiddenanchor" id="signin"></a>
