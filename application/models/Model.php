@@ -183,6 +183,29 @@ class Model extends CI_Model
 		return $this->db->get()->num_rows();
 		
 	}
+    public function findDataUser($table,$reference,$id)
+	{
+		$this->db->from($table);
+		$this->db->where($reference, $id);
+		return $this->db->get()->row_array();
+
+	}
+    public function update_password_u($id, $data)
+    {
+        $this->db->where('id_user', $id);
+        $this->db->update('table_user', $data);
+        
+        
+    }
+    public function show_details_paslon($id)
+    {
+        $this->db->from('table_paslon');
+        $this->db->where('id_paslon', $id);
+        return $this->db->get()->row_array();
+        
+        
+        
+    }
     
 
 }

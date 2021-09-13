@@ -66,6 +66,7 @@
                           <th style="width: 1%;">No</th>
                           <th>Username</th>
                           <th style="width: 11%;">Edit Password</th>
+                          <!-- <th></th> -->
                           <th>Nama</th>
                           <th>Email</th>
                           <th style="width: 13%;">Waktu</th>
@@ -81,10 +82,13 @@
                         <tr>
                           <td><?=$no++?></td>
                           <td><?=$value['username'];?></td>
-                          <td style="text-align: center;">
-                          <a href="<?php echo base_url(); ?>controller/edit_password/<?=$value['id_user']?>"
+                          <!-- <td style="text-align: center;">
+                          <a href="<?= base_url(); ?>controller/edit_password/<?=$value['id_user']?>"
                               class="btn btn-success btn-xs"> <i class="fa fa-edit"></i> Edit</a>
-                          </td>
+                          </td> -->
+                          <td>
+                              <a href="<?=base_url();?>" class="btn btn-primary btn-sm fa fa-edit edit-password" data-id="<?=$value['id_user']?>"> Edit Password</a>
+                        </td>
                           
                           <td><?=$value['nama'];?></td>
                           <td><?=$value['email'];?></td>
@@ -184,6 +188,77 @@
 		</div>
 	</div>
 </div>
+
+<!-- Modal edit passsowd -->
+<div class="modal fade" id="edit-password" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 style="text-align: center;" class="modal-title">Edit Password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+            </div>
+            <div class="modal-body">
+                <form action="<?=base_url();?>controller/update_password_u" method="post" enctype="multipart/form-data">
+                    <input type="text" name="id" id="id_u">
+
+                    <div class="form-group">
+                        <label for="">Username</label>
+                        <input type="text" name="username" id="username_u" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="text" name="email" id="email_u" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Nama</label>
+                        <input type="text" name="nama" id="nama_u" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Edit Password</label>
+                        <input type="password" name="password" id="password_u" class="form-control" placeholder="*******" aria-describedby="helpId">
+                    </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button> 
+                <button type="submit" class="btn btn-primary btn-sm fa fa-save"> Save</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- <script>
+    $('.edit-password').on('click', function(e) {
+
+        e.preventDefault();
+
+        $('#edit-password').modal();
+        let id = $(this).data('id')
+        $.ajax({
+            type: "POST",
+            url: "<?=base_url('controller/get_data_password')?>",
+            data: {
+                id: id
+            },
+            dataType: "JSON",
+            success: function(response) {
+                console.log(response);
+                $('#id').attr('hidden', true);
+                $('input[name=id]').val(response.id_user);
+                $('#username_u').val(response.username);
+                $('#email_u').val(response.email);
+                $('#edit-password').modal('show');
+            }
+        });
+
+    })
+</script> -->
+
 <script>
 function hapus_admin(id){
   $("#id").val(id);

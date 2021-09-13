@@ -278,7 +278,39 @@ public function __construct()
 		$data=$this->model->get_foto($id);
 		echo json_encode($data);
 	}
-  
+
+    public function get_data_password(Type $var = null)
+	{
+		$id=$this->input->post('id');
+		$data=$this->model->findDataUser('table_user','id_user',$id);
+		echo json_encode($data);
+
+	}
+ 
+    public function update_password_u()
+	{
+		$id = $this->input->post('id');
+		$data = [
+			'username'=> $this->input->post('username'),
+			'email'=> $this->input->post('email'),
+			'nama'=> $this->input->post('nama'),
+			'password'=> md5($this->input->post('password')),
+			
+		];
+		$this->model->update_password_u($id, $data);
+		$this->session->set_flashdata('success', 'success');
+		
+		redirect('controller/data_user');
+		
+		
+	}
+    public function show_details_paslon()
+    {
+        $id = $this->input->post('id');
+        $data = $this->model->show_details_paslon($id);
+        echo json_encode($data);
+        
+    }
 
     
 

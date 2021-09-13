@@ -116,7 +116,7 @@
 			<div class="modal-header">
 				<h5 class="modal-title"><i class="btn btn-warning fa fa-volume-down"> Visi Misi Kandidat</i></h5>
 				
-			</div>
+			</div> 	
       
 			<div class="modal-body">    
                <div id="isi-visi">

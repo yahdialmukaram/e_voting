@@ -112,14 +112,14 @@
     $("#pesan").fadeTo(1000,0).slideUp(500,function () { 
     $(this).remove();
     });
-  }, 6000);
+  }, 2500);
 // tutup pesan
 </script>
 <script>
 	$(document).ready(function () {
 		$.ajax({
 			type: "POST",
-			url: "http://localhost/e_voting/controller/diagram",
+			url: "<?=base_url()?>controller/diagram",
 			data: "data",
 			dataType: "JSON",
 			success: function (response) {
@@ -166,6 +166,35 @@ var myChart = new Chart(ctx, {
     }
 });
  }
+</script>
+
+<!-- edit data user -->
+<script>
+    $('.edit-password').on('click', function(e) {
+
+        e.preventDefault();
+
+        let id = $(this).data('id')
+        $.ajax({
+            type: "POST",
+            url: "<?=base_url('controller/get_data_password')?>",
+            data: {
+                id: id
+            },
+            dataType: "JSON",
+            success: function(response) {
+                console.log(response);
+                $('#id_u').attr('hidden', true);
+                $('input[name=id]').val(response.id_user);
+                $('#username_u').val(response.username);
+                $('#email_u').val(response.email);
+                $('#nama_u').val(response.nama);
+                $('#edit-password').modal('show');
+            }
+        });
+
+    })
+    
 </script>
   </body>
 </html>
