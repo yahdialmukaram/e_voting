@@ -197,6 +197,14 @@ public function __construct()
         $this->load->view('admin/data_selesai_memilih', $data);
         $this->load->view('admin/footer');    
     }
+    public function data_belum_memilih()
+    {
+        $judul ['title'] = 'halaman DPT belum memilih';
+        $data ['pemilih'] = $this->model->get_belum_memilih();
+        $this->load->view('admin/header', $judul);
+        $this->load->view('admin/data_belum_memilih', $data);
+        $this->load->view('admin/footer');    
+    }
     public function edit_password($id)
     {
         $judul ['title'] = 'halaman edit passord';

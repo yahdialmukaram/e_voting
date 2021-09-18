@@ -38,6 +38,17 @@ class Cetak extends CI_Controller {
         $mpdf->Output();
         
     }
+    public function printdpt_belum_memilih()
+    {
+        $data['title'] = 'Prind dpt belum memilih';
+        $data['pemilih'] = $this->model->get_belum_memilih(); 
+        $mpdf = new Mpdf\Mpdf(['format'=>'Legal']);
+        $mpdf->AddPage('L');
+        $cetak = $this->load->view('admin/printdpt_belum_memilih', $data, true);
+        $mpdf->WriteHtml($cetak);
+        $mpdf->Output();
+        
+    }
 
 }
 

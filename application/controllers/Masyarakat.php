@@ -66,14 +66,6 @@ class Masyarakat extends CI_Controller
     }
     public function save_data_diri()
     {
-        // $nik = $this->input->post('nik');
-        // $sql = $this->db->query("select nik from table_masyarakat where nik= '$nik'");
-        // $check_nik = $sql->num_rows();
-        // if ($check_nik > 0 ) {
-        //     $this->session->set_flashdata('error','Nik Yang Anda Masukan Sudah Terdaftar');
-        //     redirect('masyarakat');
-        // }
-        
         $nik = $this->input->post('nik');
         $check_nik = $this->Model_masyarakat->modelcheck($nik);
         if($check_nik > 0){   
@@ -81,7 +73,6 @@ class Masyarakat extends CI_Controller
             redirect('masyarakat');
             
         }
-
 
         $image = $this->upload('image');
         if ($image['status'] == 'success') {

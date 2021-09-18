@@ -35,13 +35,20 @@ class Model extends CI_Model
     }
     public function get_selesai_memilih()
     {
-        // $this->db->select('*');        
         $this->db->from('table_masyarakat');
         $this->db->order_by('id_masyarakat', 'desc');
         $this->db->where(['status'=>1]);
         $this->db->where('suara !="null"');			
         return $this->db->get()->result_array();
     }
+    public function get_belum_memilih()
+    {
+        $this->db->from('table_masyarakat');
+        $this->db->order_by('id_masyarakat', 'desc');
+        $this->db->where(['status'=>0]);
+        return $this->db->get()->result_array();
+    }
+
     public function get_paslon()
     {
 	$this->db->from('table_paslon');

@@ -95,7 +95,7 @@
 														<?php if ($value['status']==0):?>
 													<a href="#" class="label label-danger" onclick="verifikasi(<?=$value['id_masyarakat']?>);"><i class="fa fa-ban"></i> Belum Verifikasi</a>
 													<?php elseif ($value['status']==1):?>
-													<a href="#" class="label label-warning" onclick="cancel_verifikasi(<?=$value['id_masyarakat']?>)"><i class="fa fa-check"></i> Terverifikasi</a>
+													<a href="#" class="label label-warning" onclick="cancel_verifikasi(<?=$value['id_masyarakat']?>)"><i class="fa fa-refresh"></i> Terverifikasi</a>
 													<?php elseif ($value['status']==2):?>
 													<a href="#" class="label label-success"><i class="fa fa-check"></i> Telah Memilih</a>
 													<?php endif;?>
@@ -154,7 +154,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,7 +49,8 @@
 							<li class="">
 								<a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
 									aria-expanded="false">
-									<img src="<?=base_url();?>assets/images/admin.png" alt=""><?=$this->session->userdata('username');?>
+									<img src="<?=base_url();?>assets/images/admin.png"
+										alt=""><?=$this->session->userdata('username');?>
 									<span class=" fa fa-angle-down"></span>
 								</a>
 								<ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -63,7 +63,8 @@
                           </a>
                         </li>
                         <li><a href="javascript:;">Help</a></li> -->
-									<li><a href="<?=base_url('c_login/logout');?>"><i class="fa fa-sign-out pull-right"></i> Keluar</a></li>
+									<li><a href="<?=base_url('c_login/logout');?>"><i
+												class="fa fa-sign-out pull-right"></i> Keluar</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -91,17 +92,17 @@
 
 									<div class="clearfix"></div>
 								</div>
-								
+
 								<!-- alert simpan data -->
 								<?php if ($this->session->flashdata('success')):?>
-								<div id ="pesan" class="aler alert-success" role="alert">
-								<storng><?=$this->session->flashata('success');?></strong>
+								<div id="pesan" class="aler alert-success" role="alert">
+									<storng><?=$this->session->flashata('success');?></strong>
 								</div>
 								<?php endif?>
 								<!-- alet untuk hapus data -->
 								<?php if ($this->session->flashdata('error')):?>
 								<div id="pesan" class="alert alert-danger" role="alert">
-								<strong><?=$this->session->flashdata('error');?></strong>
+									<strong><?=$this->session->flashdata('error');?></strong>
 								</div>
 								<?php endif;?>
 
@@ -119,26 +120,28 @@
 										admin berhak untuk menonaktifkan account anda !! <br>
 										Jika anda klik simpan berarti anda setuju dengan semua ketentuan yang ada
 									</div>
-								
-			<form id="save_data_diri" enctype="multipart/form-data" class="form-horizontal form-label-right" method="POST"
+
+									<form id="save_data_diri" enctype="multipart/form-data"
+										class="form-horizontal form-label-right" method="POST"
 										action="<?=base_url();?>masyarakat/save_data_diri">
 										<div class="col-md-6">
 											<div class="form-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12">NIK</label>
 												<div class="col-md-9 col-sm-9 col-xs-12">
-													<input type="text" name="nik"
-														value="" class="form-control" placeholder="">
+													<input type="text" name="nik" value="" class="form-control"
+														placeholder="">
 												</div>
 											</div>
 											<div class="form-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12">Nama
 												</label>
 												<div class="col-md-9 col-sm-9 col-xs-12">
-													<input type="text" name="nama" class="form-control"
-														placeholder="Nama">
+													<input type disabled="text" name=""
+														value="<?= $this->session->userdata('username');?>"
+														class="form-control">
 												</div>
-                                            </div>
-                                            <div class="form-group">
+											</div>
+											<div class="form-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12">
 													Alamat
 												</label>
@@ -161,15 +164,14 @@
 													Lahir</label>
 												<div class="col-md-9 col-sm-9 col-xs-12">
 													<div class="input-group date" id="myDatepicker2">
-														<input type="text" name="tanggal_lahir" 
-															class="form-control">
+														<input type="text" name="tanggal_lahir" class="form-control">
 														<span class="input-group-addon">
 															<span class="glyphicon glyphicon-calendar"></span>
 														</span>
 													</div>
 												</div>
 											</div>
-											
+
 											<div class="form-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12">Jenis Kelamin
 												</label>
@@ -179,21 +181,21 @@
 														<option>Perempuan</option>
 													</select>
 												</div>
-                                            </div>
-                                            
+											</div>
+
 											<div class="ln_solid"></div>
 										</div>
 										<div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Nomor
-                                                                HP</label>
-                                                            <div class="col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" name="no_hp" value="" class="form-control"
-                                                                    placeholder="Nomor hp">
-                                                            </div>
-                                                        </div>
+											<div class="form-group">
+												<label class="control-label col-md-3 col-sm-3 col-xs-12">Nomor
+													HP</label>
+												<div class="col-md-9 col-sm-9 col-xs-12">
+													<input type="text" name="no_hp" value="" class="form-control"
+														placeholder="Nomor hp">
+												</div>
+											</div>
 
-                                        <div class="form-group">
+											<div class="form-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12">Agama
 												</label>
 												<div class="col-md-9 col-sm-9 col-xs-12">
@@ -204,10 +206,11 @@
 														<option>Budha</option>
 													</select>
 												</div>
-											</div>	
-											
+											</div>
+
 											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12">Status Perkawinan
+												<label class="control-label col-md-3 col-sm-3 col-xs-12">Status
+													Perkawinan
 												</label>
 												<div class="col-md-9 col-sm-9 col-xs-12">
 													<select name="status_perkawinan" id="" class="form-control">
@@ -216,17 +219,15 @@
 													</select>
 												</div>
 											</div>
-										
-									
-								
-							
+
 											<div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12"> Image</label>
-                        <div class="col-md-8 col-sm-12 col-xs-12">
-                          <input type="file" name="image" required  class="form-control" placeholder="" onchange="loadFile(event)" >
-						</div>
-					  </div>
-					  <div class="form-group">
+												<label class="control-label col-md-3 col-sm-3 col-xs-12"> Image</label>
+												<div class="col-md-8 col-sm-12 col-xs-12">
+													<input type="file" name="image" required class="form-control"
+														placeholder="" onchange="loadFile(event)">
+												</div>
+											</div>
+											<div class="form-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
 												<div class="col-md-9 col-sm-9 col-xs-12">
 													<img id="output" class="foto-mahasiswa"
@@ -301,8 +302,7 @@
 	<!-- moment.js -->
 	<script src="<?=base_url();?>assets/vendors/moment/min/moment.min.js"></script>
 	<!-- bootstrap-datetimepicker -->
-	<script
-		src="<?=base_url();?>assets/vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js">
+	<script src="<?=base_url();?>assets/vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js">
 	</script>
 	<!-- Custom Theme Scripts -->
 	<script src="<?=base_url();?>assets/build/js/custom.min.js"></script>
@@ -311,6 +311,11 @@
 		$('#tgl_selesai').datetimepicker({
 			format: 'DD-MM-YYYY'
 		});
+
+		
+		$('#myDatepicker2').datetimepicker({
+        format: 'DD/MM/YYYY'
+    });
 
 		function loadFile(event) {
 			var reader = new FileReader();
@@ -321,23 +326,25 @@
 			console.log(reader);
 			reader.readAsDataURL(event.target.files[0]);
 		};
+		// kode simpan
 		$('.simpan').click(function (e) {
 			$('#konfirmasi_daftar').modal('show');
 		});
 		$('.konfirmasi').click(function (e) {
 			$('#save_data_diri').submit();
 		});
-	
-	 // pesan berwatu datatabel
-	 $('#example2').DataTable()
-    window.setTimeout(function(){
-    $("#pesan").fadeTo(1000,0).slideUp(500,function () { 
-    $(this).remove();
-    });
-  }, 6000);
-// tutup pesan
+
+		// pesan berwatu datatabel
+		$('#example2').DataTable()
+		window.setTimeout(function () {
+			$("#pesan").fadeTo(1000, 0).slideUp(500, function () {
+				$(this).remove();
+			});
+		}, 3000);
+		// tutup pesan
+
 	</script>
-	
+
 </body>
 
 </html>

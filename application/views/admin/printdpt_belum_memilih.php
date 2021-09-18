@@ -22,7 +22,7 @@
 </head>
 <body>
 
-<img src="uploads/original_image/lambang.png" style="float:left; width: 90px; height: 90px;"><h3 style="text-align: center;"><u>DATA PEMILIH TETAP (DPT) TELAH MEMILIH KECAMATAN BATIPUH SELATAN</u> <br><br><u>KABUPATEN TANAH DATAR</u></h3>
+<img src="uploads/original_image/lambang.png" style="float:left; width: 90px; height: 90px;"><h3 style="text-align: center;"><u>DATA PEMILIH TETAP (DPT) BELUM MEMILIH KECAMATAN BATIPUH SELATAN</u> <br><br><u>KABUPATEN TANAH DATAR</u></h3>
   
 
   <!-- <p style="text-align: center;">DATA PEMILIH TETAP (DPT) KECAMATAN BATIPUH SELATAN</p>
@@ -30,8 +30,8 @@
                 
                 
               
-                <br>
-				<h5>Data DPT Telah Memilih</h5>
+  <br>
+  <h5>Data Belum Memilih</h5>
                 <h5>Tanggal Print : <?= date('d-m-Y');?> </h5>
               
                     <table>
@@ -64,13 +64,13 @@
                           <td><?=$value['jenis_kelamin'];?></td>
                            <td>
 						<?php if ($value['suara']==null):?>
-						<?php if ($value['status']==0):?>
+						<?php if ($value['status']==null):?>
 						
-						<?php elseif ($value['status']==2):?>
-						<a href="#" class="label label-success"><i class="fa fa-check"></i> Telah Memilih</a>
+						<?php elseif ($value['status']==0):?>
+						<a href="#" class="label label-danger"><i class="fa fa-check"></i> Belum Memilih</a>
 						<?php endif;?>
 						<?php else: ?>
-						<a href="#" class="label label-success"><i class="fa fa-check"></i> Telah Memilih</a>
+						<a href="#" class="label label-danger"><i class="fa fa-check"></i> Belum Memilih</a>
 						<?php endif; ?>
 						</td>
                           <td><?=$value['no_hp'];?></td>
