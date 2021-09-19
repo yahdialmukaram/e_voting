@@ -203,7 +203,8 @@ public function __construct()
         $data ['pemilih'] = $this->model->get_belum_memilih();
         $this->load->view('admin/header', $judul);
         $this->load->view('admin/data_belum_memilih', $data);
-        $this->load->view('admin/footer');    
+        $this->load->view('admin/footer');  
+		// echo json_encode($data);  
     }
     public function edit_password($id)
     {
