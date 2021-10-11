@@ -78,7 +78,6 @@ class Masyarakat extends CI_Controller
         if ($image['status'] == 'success') {
             $data = [
                 'nik' => $this->input->post('nik'),
-                'nama' => $this->input->post('nama'),
                 'alamat' => $this->input->post('alamat'),
                 'tempat_lahir' => $this->input->post('tempat_lahir'),
                 'tanggal_lahir' => $this->input->post('tanggal_lahir'),
@@ -95,11 +94,12 @@ class Masyarakat extends CI_Controller
             $this->Model_masyarakat->save_data_diri($data);
             $this->session->set_flashdata('success', 'data di simpan');
             redirect('masyarakat/home');
-        } else {
+        } 
+        else {
             $this->session->set_flashdata('error', 'Foto yang anda masukan tidak sesui dengan kreteria sisten !!');
             redirect('masyarakat');
         }
-        // print_r($data);
+        echo json_encode($data);
     }
 
     public function edit_profil()

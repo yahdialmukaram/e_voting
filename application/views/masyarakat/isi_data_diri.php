@@ -136,7 +136,7 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12">Nama
 												</label>
 												<div class="col-md-9 col-sm-9 col-xs-12">
-													<input type disabled="text" name=""
+													<input type disabled="text" name="nama"
 														value="<?= $this->session->userdata('username');?>"
 														class="form-control">
 												</div>
